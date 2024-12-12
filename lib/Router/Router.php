@@ -1,6 +1,6 @@
 <?php
 
-namespace Portfolio\Router;
+namespace MarieTeam\Router;
 
 require dirname(__DIR__, 2) . '/config/routes.php';
 
@@ -30,7 +30,7 @@ class Router {
 		return explode('/', rtrim(ltrim($path, '/'), '/'));
 	}
 
-    private function parseRoutes(): void {
+    private function parseRoutes() {
 		$explodedRequestedPath = $this->explodePath($this->requestedPath);
 		$params = [];
 
