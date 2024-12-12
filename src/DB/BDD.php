@@ -10,7 +10,7 @@ class BDD{
     }
 
     public function select(string $sql){
-        return $this->BDD->query($sql)->fetchAll();
+        return $this->BDD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insert(string $sql){

@@ -5,7 +5,8 @@ namespace MarieTeam\Router;
 require dirname(__DIR__, 2) . '/config/routes.php';
 
 if (!function_exists('str_contains')) {
-    function str_contains($haystack, $needle) {
+    function str_contains($haystack, $needle): bool
+    {
         return $needle !== '' && mb_strpos($haystack, $needle) !== false;
     }
 }
@@ -21,7 +22,7 @@ class Router {
     public function __construct() {
 		$this->routes = ROUTES;
 		$this->availablePaths = array_keys($this->routes);
-		$this->requestedPath = isset($_GET['path']) ? in_array($_GET['path'], $this->availablePaths) ? $_GET['path'] : '/' : '/';
+		$this->requestedPath = $_GET['path'] ?? '/';
 		$this->parseRoutes();
 	}
 
@@ -59,7 +60,10 @@ class Router {
         if (isset($route)) {
 			$controller = new $route['controller'];
 			$controller->{$route['method']}(...$params);
-		}
+		}else{
+            $controller = new $this->routes['/']['controller'];
+            $controller->{$this->routes['/']['method']}();
+        }
 	}
 
     private function isParam(string $candidatePathPart): bool {

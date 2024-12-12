@@ -9,18 +9,23 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
 		'method' => 'contact'
     ],
-    '/liaisons'  => [
+    'liaisons'  => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisons'
     ],
+    'liaisons/{id}' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'liaisonById',
+    ]
+    ,
 	'auth/login' => [
 		'controller' => App\Controller\MainController::class,
 		'method' => 'login'
 	],
 
 	'auth/register' => [
-	'controller' => App\Controller\MainController::class,
-	'method' => 'register'
-]
+        'controller' => App\Controller\MainController::class,
+        'method' => 'register'
+    ]
 
 ];
