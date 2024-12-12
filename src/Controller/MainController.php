@@ -17,4 +17,12 @@ class MainController extends AbstractController {
         return $this->renderView('main/liaisons.php', ['title' => 'Liaisons']);
     }
 
+		public function login(){
+			return $this->renderView('auth/login.php', ['title' => 'Connexion']);
+		}
+
+		public function register(){
+			return $this->renderView('auth/register.php', ['title' => 'Connexion']);
+		}
+
 }

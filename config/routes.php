@@ -12,6 +12,15 @@ const ROUTES = [
     '/liaisons'  => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisons'
-    ]
+    ],
+	'auth/login' => [
+		'controller' => App\Controller\MainController::class,
+		'method' => 'login'
+	],
+
+	'auth/register' => [
+	'controller' => App\Controller\MainController::class,
+	'method' => 'register'
+]
 
 ];
