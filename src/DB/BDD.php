@@ -1,22 +1,19 @@
 <?php
 
-namespace App\Database;
+namespace App\DB;
 
+use PDO;
 class BDD{
-
     private $BDD;
-
     public function __construct(){
         $this->BDD = new PDO('mysql:host=localhost;dbname=marieteam_nef_php', 'root', '');
     }
 
     public function select(string $sql){
-        $this->BDD->exec($sql);
+        return $this->BDD->query($sql)->fetchAll();
     }
 
     public function insert(string $sql){
-        $this->BDD->exec($sql);
+        return $this->BDD->query($sql)->fetchAll();
     }
-
-
 }
