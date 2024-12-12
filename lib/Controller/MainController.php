@@ -15,8 +15,5 @@ class MainController extends AbstractController {
 		return $this->redirectToRoute('home', ['state' => 'success']);
 	}
 
-    public function parcours() {
-        return $this->renderView('main/parcours.php', ['title' => 'Parcours'])
-    }
 
 }

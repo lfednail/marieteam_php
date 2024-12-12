@@ -9,7 +9,8 @@ abstract class AbstractController {
 		return require_once dirname(__DIR__, 2) . '/templates/layout.php';
 	}
 
-    protected function redirectToRoute(string $path, array $params = []): void {
+    protected function redirectToRoute(string $path, array $params = [])
+    {
 		$uri = $_SERVER['SCRIPT_NAME'] . "?path=" . $path;
 
 		if (!empty($params)) {
