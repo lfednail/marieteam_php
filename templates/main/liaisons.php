@@ -2,25 +2,11 @@
 
 use App\DB\BDD;
 
-$bdd = new BDD();
+$db = new BDD();
 
-$listLiaisons = $bdd->select("Select * from liaison");
+if(isset($data['id'])){
+    require dirname(__DIR__) . "/liaisons/detail.php";
+}else{
+    require dirname(__DIR__) . "/liaisons/list.php";
+}
 
-?>
-
-<div class="flex" >
-
-    <?php foreach ($listLiaisons as $liaison):?>
-        <div class="p-5">
-
-            <h5>
-                <a href=<?= "liaisons/" . $liaison["id_Liaison"] ?> >
-                    <?= $liaison["Lieu_depart"] . ' - ' . $liaison["Lieu_arrivee"] ?>
-                </a>
-            </h5>
-
-            <sub><?= $liaison["Distance_liaison"] ?></sub>
-        </div>
-    <?php endforeach; ?>
-
-</div>

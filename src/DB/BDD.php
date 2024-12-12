@@ -13,6 +13,12 @@ class BDD{
         return $this->BDD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function selectOne(string $sql){
+        return $this->BDD->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+
     public function insert(string $sql){
         return $this->BDD->query($sql)->fetchAll();
     }
