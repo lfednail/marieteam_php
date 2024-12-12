@@ -5,7 +5,7 @@ const ALIASES = [
 	'App' => 'src'
 ];
 
-spl_autoload_register(function (string $class): void {
+spl_autoload_register(function (string $class){
 
 	$namespaceParts = explode('\\', $class);
 
