@@ -7,8 +7,11 @@
 </head>
 <body>
     <nav>
-
+        <ul>
+            <il><a href="/marieteam_php/public/">Acceuil</a></il>
+            <il><a href="/marieteam_php/public/liaisons">les liaisons</a></il>
+        </ul>
     </nav>
     
 </body>
-</html>l
+</html>
