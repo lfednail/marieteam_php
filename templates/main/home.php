@@ -72,12 +72,5 @@
     </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-6 text-center">
-    <div class="container mx-auto">
-        <p>© 2024 MarieTeam. Tous droits réservés.</p>
-    </div>
-</footer>
-
 </body>
 </html>
