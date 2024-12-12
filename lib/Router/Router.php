@@ -21,7 +21,7 @@ class Router {
     public function __construct() {
 		$this->routes = ROUTES;
 		$this->availablePaths = array_keys($this->routes);
-		$this->requestedPath = isset($_GET['path']) ? $_GET['path'] : '/';
+		$this->requestedPath = isset($_GET['path']) ? in_array($_GET['path'], $this->availablePaths) ? $_GET['path'] : '/' : '/';
 		$this->parseRoutes();
 	}
 
