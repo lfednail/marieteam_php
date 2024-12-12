@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<nav class="bg-blue-700 p-3"> <!-- Increased padding here -->
+<nav class="bg-blue-700 p-3 sticky top-0 z-50"> <!-- Increased padding here -->
     <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
         <a href="/marieteam_php/public" class="text-white text-2xl font-bold">MarieTeam</a> <!-- Increased font size -->
