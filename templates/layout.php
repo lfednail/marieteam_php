@@ -14,7 +14,7 @@
 
         <!-- Links (hidden on mobile) -->
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
-            <a href="/marieteam_php/public/" class="text-gray-300 text-2xl hover:text-white">Home</a> <!-- Increased font size -->
+            <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
