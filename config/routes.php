@@ -1,7 +1,5 @@
 <?php
 
-namespace MarieTeam\Router;
-
 const ROUTES = [
     '/' => [
 		'controller' => App\Controller\MainController::class,

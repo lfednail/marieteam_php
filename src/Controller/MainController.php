@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use MarieTeam\Controller\AbstractController;
-
 class MainController extends AbstractController {
 
     public function home() {

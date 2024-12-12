@@ -1,6 +1,6 @@
 <?php
 
-namespace MarieTeam\Controller;
+namespace App\Controller;
 
 abstract class AbstractController {
 
