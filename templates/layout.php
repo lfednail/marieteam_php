@@ -37,8 +37,17 @@
         <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
     </div>
 </nav>
-
 <?php require $templatePath; ?>
+<footer class="bg-blue-950 p-6 mt-12">
+    <div class="container mx-auto text-center text-white">
+        <p class="text-lg">© 2024 MyWebsite. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
+            <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
+            <a href="#" class="text-gray-300 hover:text-white mx-2">Contact</a>
+        </div>
+    </div>
+</footer>
 
 <script>
     const menuBtn = document.getElementById('menu-btn');
@@ -48,6 +57,8 @@
         mobileMenu.classList.toggle('hidden');
     });
 </script>
+
+
 
 </body>
 </html>
