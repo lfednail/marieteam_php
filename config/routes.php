@@ -9,5 +9,9 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
 		'method' => 'contact'
     ],
+    '/liaisons'  => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'liaisons'
+    ]
 
 ];

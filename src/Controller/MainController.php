@@ -13,5 +13,8 @@ class MainController extends AbstractController {
 		return $this->redirectToRoute('home', ['state' => 'success']);
 	}
 
+    public function liaisons() {
+        return $this->renderView('main/liaisons.php', ['title' => 'Liaisons']);
+    }
 
 }

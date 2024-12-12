@@ -7,17 +7,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<nav class="bg-blue-700 p-3"> <!-- Increased padding here -->
+<nav class="bg-blue-700 p-6"> <!-- Increased padding here -->
     <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
-        <a href="#" class="text-white text-2xl font-bold">MarieTeam</a> <!-- Increased font size -->
+        <a href="/marieteam_php/public" class="text-white text-4xl font-bold">MarieTeam</a> <!-- Increased font size -->
 
         <!-- Links (hidden on mobile) -->
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
+            <a href="/marieteam_php/public/" class="text-gray-300 text-2xl hover:text-white">Home</a> <!-- Increased font size -->
+            <a href="#" class="text-gray-300 text-2xl hover:text-white">About</a> <!-- Increased font size -->
+            <a href="#" class="text-gray-300 text-2xl hover:text-white">Services</a> <!-- Increased font size -->
+            <a href="#" class="text-gray-300 text-2xl hover:text-white">Contact</a> <!-- Increased font size -->
+            <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-2xl hover:text-white">Les liaisons</a> <!-- Increased font size -->
         </div>
 
         <!-- Mobile Menu Button -->
@@ -30,12 +31,15 @@
 
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-6 mt-2 bg-blue-950 p-6 rounded"> <!-- Increased padding -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
+        <a href="#" class="text-gray-300 text-2xl hover:text-white">Home</a> <!-- Increased font size -->
+        <a href="#" class="text-gray-300 text-2xl hover:text-white">About</a> <!-- Increased font size -->
+        <a href="#" class="text-gray-300 text-2xl hover:text-white">Services</a> <!-- Increased font size -->
+        <a href="#" class="text-gray-300 text-2xl hover:text-white">Contact</a> <!-- Increased font size -->
     </div>
 </nav>
+
+<?php require $templatePath; ?>
+
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
