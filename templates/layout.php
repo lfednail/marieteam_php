@@ -32,11 +32,11 @@
 
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-6 mt-2 bg-blue-950 p-6 rounded"> <!-- Increased padding -->
-        <a href="/marieteam_php/public/" class="text-gray-300 text-2xl hover:text-white">Home</a><!-- Increased font size -->
+        <a href="" class="text-gray-300 text-2xl hover:text-white">Home</a><!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-        <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
+        <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
     </div>
 </nav>
 <?php require $templatePath; ?><br>

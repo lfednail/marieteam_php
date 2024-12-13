@@ -7,7 +7,7 @@
 	<title>Login</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50">
 
 <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded">
 	<h2 class="text-3xl font-bold text-center mb-6">Login</h2>
