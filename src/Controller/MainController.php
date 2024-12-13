@@ -19,12 +19,12 @@ class MainController extends AbstractController {
         return $this->renderView('main/liaisons.php', ['title' => 'Liaisons']);
     }
 
-    public function liaisonById(int $id){
+    public function liaisonById(array $data){
         return $this->renderView(
             'main/liaisons.php',
             [
                 'title' => 'Liaisons',
-                'id' => $id
+                'id' => $data['id']
             ])
             ;
     }

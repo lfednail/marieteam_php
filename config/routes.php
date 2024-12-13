@@ -15,7 +15,7 @@ const ROUTES = [
     ],
     'liaisons/{id}' => [
         'controller' => App\Controller\MainController::class,
-        'method' => 'liaisonById',
+        'method' => 'liaisonById'
     ]
     ,
 	'login' => [

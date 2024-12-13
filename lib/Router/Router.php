@@ -59,7 +59,7 @@ class Router {
 
         if (isset($route)) {
 			$controller = new $route['controller'];
-			$controller->{$route['method']}(...$params);
+			$controller->{$route['method']}($params);
 		}else{
             $controller = new $this->routes['/']['controller'];
             $controller->{$this->routes['/']['method']}();
