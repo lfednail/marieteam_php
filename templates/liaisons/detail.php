@@ -1,5 +1,7 @@
 <?php
 
+var_dump($data);
+
 $listLiaisonTarif = $db->select("Select * from tarifliaison as tl where tl.id_Liaison = ${data['id']} ");
 
 $Lettre_identification = [];
@@ -39,6 +41,7 @@ foreach ($listLiaisonTarif as $LiaisonTarif){
             <td><?= $Lettre_identification[ $lt['Lettre_identification'] ] ['Lettre_identification'] ?></td>
             <td><?= $Libelle_typeTarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ] ['Libelle_typeTarif'] ?></td>
             <?php foreach($periode as $key =>$p): ?>
+            <?php var_dump($tarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ]); ?>
                 <td><?= $tarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ] [ $key ]  ?? 'undefined' ; ?></td>
             <?php endforeach;?>
         </tr>

@@ -18,12 +18,12 @@ const ROUTES = [
         'method' => 'liaisonById',
     ]
     ,
-	'auth/login' => [
+	'login' => [
 		'controller' => App\Controller\MainController::class,
 		'method' => 'login'
 	],
 
-	'auth/register' => [
+	'register' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'register'
     ]

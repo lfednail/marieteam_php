@@ -18,8 +18,8 @@
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-            <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
-            <a href="auth/login" class="text-gray-300 text-xl hover:text-white">Connexion</a>
+            <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
+            <a href="login" class="text-gray-300 text-xl hover:text-white">Connexion</a>
         </div>
 
         <!-- Mobile Menu Button -->
