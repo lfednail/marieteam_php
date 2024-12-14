@@ -39,4 +39,9 @@ class MainController extends AbstractController {
         return $this->renderView('auth/register.php', ['title' => 'Connexion']);
     }
 
+    public function tryRegister ()
+    {
+        return $this->renderView('verification/try_register.php', ['title' => 'TryRegiter']);
+    }
+
 }

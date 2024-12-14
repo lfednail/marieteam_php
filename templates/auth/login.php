@@ -1,4 +1,6 @@
 <!-- login.php -->
+
+<!-- Useless
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +10,17 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
+-->
+
+<!-- if error -->
+<?php
+if(isset($_POST['error'])){
+    echo '<div class="error" > <p class="error-messege" >';
+    foreach ($_POST as $error)
+        echo $error;
+    echo  '</p></div>';
+}
+?>
 
 <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded">
 	<h2 class="text-3xl font-bold text-center mb-6">Login</h2>
@@ -23,10 +36,11 @@
 		</div>
 		<button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
 	</form>
-	<p class = "py-2 text-sm">Pas de compte ?</p>
-    <button type="button" onclick=location.href="register" class="w-40 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Inscription</button>
+	<p class = "py-2 text-sm">You don't have an account? Create one!</p>
+    <button type="button" onclick=location.href="register" class="w-40 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Register</button>
 </div>
 
+<!-- Useless
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -38,3 +52,4 @@
 
 </body>
 </html>
+-->

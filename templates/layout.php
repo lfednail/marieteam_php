@@ -1,3 +1,9 @@
+<?php
+//mise en place session
+if(!isset($_SESSION))
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,8 +24,14 @@
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-            <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
-            <a href="login" class="text-gray-300 text-xl hover:text-white">Connexion</a>
+            <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
+            <?php if(isset($_SESSION['user'])): ?>
+                <a></a><!-- to put space -->
+                <a href="profil">Profil</a>
+            <?php else: ?>
+                <a href="login" class="text-gray-300 text-xl hover:text-white">Connection</a>
+                <a href="register" class="text-gray-300 text-xl hover:text-white">Register</a>
+            <?php endif; ?>
         </div>
 
         <!-- Mobile Menu Button -->

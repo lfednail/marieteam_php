@@ -26,6 +26,10 @@ const ROUTES = [
 	'register' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'register'
+    ],
+    'try_register' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'tryRegister'
     ]
 
 ];
