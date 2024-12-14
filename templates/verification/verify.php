@@ -1,15 +1,16 @@
 <?php
 
-function verifieString(string $stringVerify): mixed{
+function verifieString(string $stringVerify): bool{
 
     $capStringVerify = strtoupper($stringVerify);
 
     //verify presence SQL component
     if(
+        (preg_match('\\', $capStringVerify)) ||
         (preg_match('\bSELECT\b',$capStringVerify)) ||
         (preg_match('\bFROM\b', $capStringVerify)) ||
         (preg_match('\bWHERE\b', $capStringVerify))
-    )   return "Attented SQLinjection detected";
+    )   return false;
 
     //return if no SQL element
     return true;
