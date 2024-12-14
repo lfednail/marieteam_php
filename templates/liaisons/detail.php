@@ -19,16 +19,21 @@ foreach ($listLiaisonTarif as $LiaisonTarif){
 }
 
 //donnees pour la liste des traversee
-$bateauFret =[];
+$bateauFret = [];
+$bateauVoyageur = [];
 
 foreach ($listTraverseeLiaison as $traversee){
-    $bateauFret [ $traversee['id_Bateau'] ] = $db->selectOne("Select b.id_Bateau, b.Longueur_bateau, b.Largeur_bateau, bf.Poid_max from bateau as b, bateaufret as bf, fret as f where b.id_Bateau = ${traversee['id_Bateau']} and b.id_Bateau = f.id_Bateau and bf.id_Bateaufret = f.id_Bateaufret ");
+    $bateauFret [] = $db->selectOne("Select b.id_Bateau, b.Longueur_bateau, b.Largeur_bateau, bf.Poid_max from bateau as b, bateaufret as bf, fret as f where b.id_Bateau = ${traversee['id_Bateau']} and b.id_Bateau = f.id_Bateau and bf.id_Bateaufret = f.id_Bateaufret ");
+    $bateauVoyageur [] = $db->selectOne("Select b.id_Bateau, b.Longueur_bateau, b.Largeur_bateau, bv.Vitesse, bv.Places from bateau as b, bateauvoyageur as bv, voyageur as v where b.id_Bateau = ${traversee['id_Bateau']} and b.id_Bateau = v.id_Bateau and bv.id_BateauVoyageur = v.id_BateauVoyageur ");
+
 }
 
 ?>
 
 
-<table>
+<!-- Table tarif -->
+<label for="Tarif">Tarif</label>
+<table id="Tarif">
     <tr>
         <th>Categorie</th>
         <th>type</th>
@@ -40,7 +45,7 @@ foreach ($listTraverseeLiaison as $traversee){
         <td></td>
         <td></td>
         <?php foreach($periode as $p): ?>
-            <td><?= $p['Debut_periode'] . '<br>au<br>' . $p['Fin_periode'] ?? 'undefined' ?></td>
+            <td><?= $p['Debut_periode'] . '<br>to<br>' . $p['Fin_periode'] ?? 'undefined' ?></td>
         <?php endforeach;?>
     </tr>
     <?php foreach($listLiaisonTarif as $lt):
@@ -50,14 +55,48 @@ foreach ($listTraverseeLiaison as $traversee){
             <td><?= $Lettre_identification[ $lt['Lettre_identification'] ] ['Lettre_identification'] ?></td>
             <td><?= $Libelle_typeTarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ] ['Libelle_typeTarif'] ?></td>
             <?php foreach($periode as $key =>$p): ?>
-                <td><?= $tarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ] [ $key ]  ?? 'undefined' ; ?></td>
+                <td><?= $tarif [ $lt['Lettre_identification'] ] [ $lt['id_TypeTarif'] ] [ $key ]  ?? 'undefined' ; ?> €</td>
             <?php endforeach;?>
         </tr>
     <?php endforeach; ?>
 </table>
 
-<table>
+<!-- table traversee bateau fret -->
+<?php if($bateauFret[0]): ?>
+<label for="Fret">Fret</label>
+<table id="Fret">
     <tr>
-        <th></th>
+        <th>Length</th>
+        <th>Width</th>
+        <th>Weight limit</th>
     </tr>
+    <?php foreach ($bateauFret as $fret): ?>
+    <tr>
+        <td><?= $fret['Longueur_bateau'] ?></td>
+        <td><?= $fret['Largeur_bateau'] ?></td>
+        <td><?= $fret['Poid_max'] ?> Kg</td>
+    </tr>
+    <?php endforeach; ?>
 </table>
+<?php endif; ?>
+
+<!-- table traversee bateau voyageur -->
+<?php if($bateauVoyageur[0]): ?>
+<label for="cruise ">Cruise </label>
+<table id="cruise ">
+    <tr>
+        <th>Length</th>
+        <th>Width</th>
+        <th>Speed</th>
+        <th>Place</th>
+    </tr>
+    <?php foreach ($bateauVoyageur as  $voyageur): ?>
+    <tr>
+        <td><?= $voyageur['Longueur_bateau'] ?></td>
+        <td><?= $voyageur['Largeur_bateau'] ?></td>
+        <td><?= $voyageur['Vitesse'] ?> Knots</td>
+        <td><?= $voyageur['Places'] ?> Kg</td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+<?php endif; ?>

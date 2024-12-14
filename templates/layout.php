@@ -24,13 +24,13 @@ if(!isset($_SESSION))
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-            <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
+            <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
             <?php if(isset($_SESSION['user'])): ?>
                 <a></a><!-- to put space -->
-                <a href="profil">Profil</a>
+                <a href="/marieteam_php/public/profil">Profil</a>
             <?php else: ?>
-                <a href="login" class="text-gray-300 text-xl hover:text-white">Connection</a>
-                <a href="register" class="text-gray-300 text-xl hover:text-white">Register</a>
+                <a href="/marieteam_php/public/login" class="text-gray-300 text-xl hover:text-white">Connection</a>
+                <a href="/marieteam_php/public/register" class="text-gray-300 text-xl hover:text-white">Register</a>
             <?php endif; ?>
         </div>
 
