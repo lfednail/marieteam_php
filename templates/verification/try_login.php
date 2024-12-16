@@ -17,9 +17,9 @@ if(
         //verify if password conform to CNIl recommendation
         $errorPassword = verifyPassword($_POST['password']);
         if(empty($errorPassword)){
-
+            $cryptPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
             //verification user exist
-            $users = $db->selectOne('Select * from utitlisateur where Mail like ${_POST["email"]} and pa');
+            $users = $db->selectOne("Select * from utitlisateur where Mail like ${_POST["email"]} and Mot_de_passe like '{$cryptPassword}');");
             if(!is_null($users)) {
                 $_SESSION['user'] = $users;
                 header('location: /');

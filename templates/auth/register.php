@@ -2,10 +2,10 @@
 
 <!-- if error -->
 <?php
-    if(isset($_POST['error'])){
-        echo '<div class="error" > <p class="error-messege" >';
-        foreach ($_POST as $error)
-            echo $error;
+    if(!empty($_SESSION['error'])){
+        echo '<div class="error" > <p class="error-message" >';
+        foreach ($_SESSION['error'] as $error)
+            echo $error . '<br>';
         echo  '</p></div>';
     }
 ?>
