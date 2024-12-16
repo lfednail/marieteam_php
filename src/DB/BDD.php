@@ -17,9 +17,11 @@ class BDD{
         return $this->BDD->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
-
-
     public function insert(string $sql){
-        return $this->BDD->query($sql)->fetchAll();
+        return $this->BDD->query($sql)->execute();
+    }
+
+    public function update(string $sql){
+        return $this->BDD->query($sql)->execute();
     }
 }

@@ -6,7 +6,7 @@ class MainController extends AbstractController {
 
     public function home(): string
     {
-		return $this->renderView('main/home.php', ['title' => 'Accueil']);
+		return $this->renderView('main/home.php', ['title' => 'Home']);
 	}
 
     public function contact() {
@@ -29,6 +29,28 @@ class MainController extends AbstractController {
             ;
     }
 
+    public function liaisonCreate(){
+        return $this->renderView('liaisons/auth/create.php', ['title' => 'Create a liaison']);
+    }
+
+    public function liaisonEdit(array $data){
+        return $this->renderView('liaisons/auth/edit.php', [
+            'title' => 'Edit a liaison',
+            'id' => $data['id'],
+        ]);
+    }
+
+    public function liaisonTryCreate(){
+        return $this->renderView('verification/try_create.php', ['title' => 'Try create a liaison']);
+    }
+
+    public function liaisonTryEdit(array $data){
+        return $this->renderView('verification/try_edit.php', [
+            'title' => 'Try edit a liaison',
+            'id' => $data['id']
+        ]);
+    }
+
     public function login(): string
     {
         return $this->renderView('auth/login.php', ['title' => 'Connexion']);
@@ -37,6 +59,10 @@ class MainController extends AbstractController {
     public function register(): string
     {
         return $this->renderView('auth/register.php', ['title' => 'Connexion']);
+    }
+
+    public function tryLogin (){
+        return $this->renderView('verification/try_login.php', ['title' => 'TryLogin']);
     }
 
     public function tryRegister ()

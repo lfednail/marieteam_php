@@ -17,7 +17,17 @@ $listLiaisons = $db->select("select * from liaison");
             </h5>
 
             <sub><?= $liaison["Distance_liaison"] ?></sub>
+            <?php if(isset($_SESSION['user'])): ?>
+                <?php if($_SESSION['user']['Role']): ?>
+                        <button href="laisons/edit">Edit</button>
+                <?php endif; ?>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
+    <?php if(isset($_SESSION['user'])): ?>
+        <?php if($_SESSION['user']['Role']): ?>
+            <button href="liaisons/create">Add a liaison</button>
+        <?php endif; ?>
+    <?php endif; ?>
 
 </div>

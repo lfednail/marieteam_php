@@ -25,11 +25,11 @@ if(
                 $cryptPassword = hash($_POST['password']);
                 $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `Mail`, `Mot_de_passe`) VALUES (${_POST['last_name']}, ${_POST['first_name']}, ${_POST['email']}, $cryptPassword)");
                 $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail like ${_POST['email']}");
-                header('/');
+                header('location: /');
             }
             else{
                 $_POST['error'][] = "This email adresse is already used try login.";
-                header('register');
+                header('location: register');
             }
         }
         else{
@@ -38,7 +38,7 @@ if(
         }
     }else{
         $_POST['error'] []= "SQinjection tentative detected!";
-        header('register');
+        header('location: register');
     }
 
 }else{
