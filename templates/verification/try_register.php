@@ -33,9 +33,13 @@ if(
             }
         }
         else{
-            foreach ($errorPassword as $e)
-                $_POST['error'] []= $e;
-            header('register');
+					if(is_array($errorPassword)) {
+						foreach ($errorPassword as $e)
+							$_POST['error'] [] = $e;
+					}
+					else
+						$_POST['error'][] = $errorPassword;
+            header('location: register');
         }
     }else{
         $_POST['error'] []= "SQinjection tentative detected!";
