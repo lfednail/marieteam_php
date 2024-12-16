@@ -1,4 +1,6 @@
 <?php
+require_once 'verify.php';
+
 if(
     (isset($_POST["Lieu_depart"])) &&
     (isset($_POST["Lieu_arrivee"])) &&

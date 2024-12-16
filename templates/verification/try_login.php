@@ -20,7 +20,7 @@ if(
 
             //verification user exist
             $users = $db->selectOne('Select * from utitlisateur where Mail like ${_POST["email"]} and pa');
-            if(is_null($users)) {
+            if(!is_null($users)) {
                 $_SESSION['user'] = $users;
                 header('location: /');
             }
@@ -30,7 +30,8 @@ if(
             }
         }
         else{
-            $_POST['error'][] = $errorPassword;
+            foreach ($errorPassword as $e)
+                $_POST['error'][] = $e;
             header('location: login');
         }
     }else{

@@ -70,4 +70,12 @@ class MainController extends AbstractController {
         return $this->renderView('verification/try_register.php', ['title' => 'TryRegiter']);
     }
 
+    public function profile(){
+        return $this->renderView('main/profile.php', ['title' => 'Your profile']);
+    }
+
+    public function tryEditProfile(){
+        return $this->renderView('verification/try_editProfile.php', ['title' => 'TryEditrofil']);
+    }
+
 }

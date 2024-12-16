@@ -33,7 +33,8 @@ if(
             }
         }
         else{
-            $_POST['error'][] = $errorPassword;
+            foreach ($errorPassword as $e)
+                $_POST['error'] []= $e;
             header('register');
         }
     }else{
