@@ -1,17 +1,5 @@
 <!-- login.php -->
 
-<!-- Useless
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
--->
-
 <!-- if error -->
 <?php
     if(isset($_POST['error'])){
@@ -48,17 +36,3 @@
 	<p class = "py-2 text-sm">Do you already have an account? Use it!</p>
 	<button type="button" onclick=location.href="login" class="w-40 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Connection</button>
 </div>
-
-<!-- Useless
-<script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
-
-</body>
-</html>
--->
