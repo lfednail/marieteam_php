@@ -82,8 +82,15 @@ class MainController extends AbstractController {
         return $this->renderView('main/profil.php', ['title' => 'Your profile']);
     }
 
-    public function tryEditProfil(){
-        return $this->renderView('verification/try_editProfil.php', ['title' => 'TryEditProfil']);
+    public function editProfil(){
+        return $this->renderView('profil/edit_profil.php', ['title' => 'EditProfil']);
+    }
+
+    public function tryEditProfil(array $data){
+        return $this->renderView('verification/try_editProfil.php', [
+            'title' => 'TryEditProfil',
+            'id' => $data['id']
+        ]);
     }
 
 }
