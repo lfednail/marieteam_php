@@ -2,9 +2,9 @@
 
 <!-- if error -->
 <?php
-if(isset($_POST['error'])){
+if(isset($_SESSION['error'])){
     echo '<div class="error" > <p class="error-messege" >';
-    foreach ($_POST as $error)
+    foreach ($_SESSION['error'] as $error)
         echo $error;
     echo  '</p></div>';
 }

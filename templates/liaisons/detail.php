@@ -44,7 +44,7 @@ $bateauVoyageur = [];
     <?php endforeach; ?>
 </table>
 
-<!-- table traversee bateau fret -->
+<!-- table traversee -->
 <label for="Traversee">Traversee</label>
 <table id="Traversee">
     <tr>

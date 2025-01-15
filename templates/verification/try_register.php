@@ -26,13 +26,12 @@ if(
         //verify if password conform to CNIl recommendation
         $errorPassword = verifyPassword($_POST['password']);
         if(empty($errorPassword)){
-
             //verify if the email adresse is not already used
-            if(is_null($db->selectOne('Select * from utitlisateur where Mail like ${_POST["email"]}'))){
+            if(empty($db->selectOne('Select * from utilisateur where Mail like "' . $_POST["email"] . '";'))){
                 $cryptPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
-                $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `Mail`, `Mot_de_passe`) VALUES (${_POST['last_name']}, ${_POST['first_name']}, ${_POST['email']}, '$cryptPassword)'");
-                $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail like ${_POST['email']}");
-                header('location: /');
+                $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `Mail`, `Mot_de_passe`) VALUES ('". $_POST['last_name'] . "', '". $_POST['first_name'] . "', '" . $_POST['email'] . "', '$cryptPassword')");
+                $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail like '" . $_POST['email'] . "'");
+                header('location: /marieteam_php/public');
             }
             else{
                 $_SESSION['error'][] = "This email adresse is already used try login.";

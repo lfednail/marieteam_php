@@ -25,6 +25,7 @@ if(!isset($_SESSION))
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
+            <a href="/marieteam_php/public/traversee" class="text-gray-300 text-xl hover:text-white">Traversees</a>
             <?php if(isset($_SESSION['user'])): ?>
                 <a></a><!-- to put space -->
                 <a href="/marieteam_php/public/profil">Profil</a>

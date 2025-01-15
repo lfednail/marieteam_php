@@ -1,6 +1,5 @@
 <?php
 
-
 $listLiaisons = $db->select("select * from liaison");
 
 ?>
@@ -16,7 +15,7 @@ $listLiaisons = $db->select("select * from liaison");
                 </a>
             </h5>
 
-            <sub><?= $liaison["Distance_liaison"] ?></sub>
+            <sub><?= $liaison["Distance_liaison"] ?> km</sub>
         </div>
     <?php endforeach; ?>
 
