@@ -69,7 +69,6 @@ if(!isset($_SESSION))
             <a href="#" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
             <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
             <a href="#" class="text-gray-300 hover:text-white mx-2">Contact</a>
-            <a href="auth/login" class="text-gray-300 hover:text-white mx-2">Connection</a>
         </div>
     </div>
 </footer>
