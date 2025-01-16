@@ -15,6 +15,10 @@ $bateauVoyageur = [];
 
 
 <!-- Table tarif -->
+<!--
+small floaty tab
+upper right corner
+-->
 <label for="Tarif">Tarif</label>
 <table id="Tarif">
     <tr>
@@ -44,9 +48,13 @@ $bateauVoyageur = [];
     <?php endforeach; ?>
 </table>
 
-<!-- table traversee -->
-<label for="Traversee">Traversee</label>
-<table id="Traversee">
+<!-- table crossing-->
+<!--
+main tab
+screen width - width tarif tab
+-->
+<label for="Crossing">Crossing</label>
+<table id="Crossing">
     <tr>
         <!--<th>Date</th>-->
         <th>Boarding date</th>
