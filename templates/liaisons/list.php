@@ -1,8 +1,4 @@
-<?php
-
-$listLiaisons = $db->select("select * from liaison");
-
-?>
+<?php $listLiaisons = $db->select("select * from liaison");?>
 
 <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded space-y-5 my-10 ">
     <h2 class="text-3xl font-bold text-center mb-6">Crossings</h2>
@@ -17,19 +13,11 @@ $listLiaisons = $db->select("select * from liaison");
             </h5>
 
             <sub><?= $liaison["Distance_liaison"] ?> km</sub>
-            <?php if(isset($_SESSION['user'])):?>
-                <?php if(($_SESSION['users']['Role'] = "admin") || ($_SESSION['users']['Role'] = "Admin")):?>
-                    <button><a href="liaisons/edit/<?= $liaison["id_Liaison"] ?>">Edit</a></button>
-                <?php endif;?>
-            <?php endif;?>
+            <button><a href="liaisons/edit/<?= $liaison["id_Liaison"] ?>">Edit</a></button>
 
 
         </div>
-    <br>
+        <br>
     <?php endforeach; ?>
 </div>
-<?php if(isset($_SESSION['user'])):?>
-    <?php if(($_SESSION['users']['Role'] = "admin") || ($_SESSION['users']['Role'] = "Admin")):?>
-        <button><a href="liaisons/create">Create liaison</a></button>
-    <?php endif;?>
-<?php endif;?>
+<button><a href="liaisons/create">Create liaison</a></button>
