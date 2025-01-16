@@ -14,7 +14,7 @@
         </p>
         <div class="mt-8">
             <a href="#services" class="bg-green-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-green-600">
-                Nos Services
+                Our Services
             </a>
         </div>
     </div>
