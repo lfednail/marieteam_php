@@ -28,12 +28,12 @@ if(
                     $_SESSION['user'] = $users;
                     header('location: /marieteam_php/public');
                 }else{
-                    $_SESSION['error'][] = "This password is in correct.";
+                    $_SESSION['error'][] = "This password is incorrect.";
                     header('location: login');
                 }
             }
             else{
-                $_SESSION['error'][] = "This email adresse is in correct.";
+                $_SESSION['error'][] = "This email adresse is incorrect.";
                 header('location: login');
             }
         }

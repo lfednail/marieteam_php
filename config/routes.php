@@ -33,9 +33,9 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonTryEdit'
     ],
-    'traversee' => [
+    'crossing' => [
         'controller' => App\Controller\MainController::class,
-        'method' => 'traversee'
+        'method' => 'crossing'
     ]
     ,
 	'login' => [
@@ -58,17 +58,17 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'tryRegister'
     ],
-    'profil' => [
+    'profile' => [
         'controller'=> App\Controller\MainController::class,
-        'method' => 'profil'
+        'method' => 'profile'
     ],
-    'profil/editProfil' => [
+    'profile/editProfile' => [
         'controller' => App\Controller\MainController::class,
-        'method' => 'editProfil'
+        'method' => 'editProfile'
     ],
-    'profil/try_editProfil/{id}' => [
+    'profile/try_editProfile/{id}' => [
         'controller' => App\Controller\MainController::class,
-        'method' => 'tryEditProfil'
+        'method' => 'tryEditProfile'
     ]
 
 ];

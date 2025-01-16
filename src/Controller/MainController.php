@@ -51,8 +51,8 @@ class MainController extends AbstractController {
         ]);
     }
 
-    public function traversee(){
-        return $this->renderView('main/traversee.php', ['title' => 'Traversee']);
+    public function crossing(){
+        return $this->renderView('main/crossing.php', ['title' => 'Traversee']);
     }
 
     public function login(): string
@@ -78,17 +78,17 @@ class MainController extends AbstractController {
         return $this->renderView('verification/try_register.php', ['title' => 'TryRegiter']);
     }
 
-    public function profil(){
-        return $this->renderView('main/profil.php', ['title' => 'Your profile']);
+    public function profile(){
+        return $this->renderView('main/profile.php', ['title' => 'Your profile']);
     }
 
-    public function editProfil(){
-        return $this->renderView('profil/edit_profil.php', ['title' => 'EditProfil']);
+    public function editProfile(){
+        return $this->renderView('profile/edit_profile.php', ['title' => 'EditProfil']);
     }
 
-    public function tryEditProfil(array $data){
-        return $this->renderView('verification/try_editProfil.php', [
-            'title' => 'TryEditProfil',
+    public function tryEditProfile(array $data){
+        return $this->renderView('verification/try_editProfile.php', [
+            'title' => 'TryEditProfile',
             'id' => $data['id']
         ]);
     }
