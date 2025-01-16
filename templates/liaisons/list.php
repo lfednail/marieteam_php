@@ -19,7 +19,7 @@ $listLiaisons = $db->select("select * from liaison");
             <sub><?= $liaison["Distance_liaison"] ?> km</sub>
             <?php if(isset($_SESSION['user'])):?>
                 <?php if(($_SESSION['users']['Role'] = "admin") || ($_SESSION['users']['Role'] = "Admin")):?>
-                    <button><a href="liaisons/edit/<?= $liaison["Lieu_arrivee"] ?>">Edit</a></button>
+                    <button><a href="liaisons/edit/<?= $liaison["id_Liaison"] ?>">Edit</a></button>
                 <?php endif;?>
             <?php endif;?>
 
