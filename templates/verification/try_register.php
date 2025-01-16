@@ -48,15 +48,16 @@ $cryptPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 // Insert new user into the database
 $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `Mail`, `Mot_de_passe`) 
-             VALUES (:last_name, :first_name, :email, :password)", [
-    'last_name' => $_POST['last_name'],
-    'first_name' => $_POST['first_name'],
-    'email' => $_POST['email'],
-    'password' => $cryptPassword
-]);
+             VALUES (
+                '{$_POST['last_name']}',
+                '{$_POST['first_name']}',
+                '{$_POST['email']}',
+                '$cryptPassword'
+            )"
+);
 
 // Set user session and redirect
-$_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE :email", ['email' => $_POST['email']]);
+$_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '{$_POST['email']}'");
 header('Location: /marieteam_php/public');
 exit;
 

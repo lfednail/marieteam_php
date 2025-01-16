@@ -32,7 +32,7 @@ if (!empty($errorPassword)) {
 }
 
 // Check if user exists in the database
-$users = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE :email", ['email' => $_POST['email']]);
+$users = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '{$_POST['email']}'");
 if (is_null($users)) {
     $_SESSION['error'][] = "This email address is incorrect.";
     header('Location: login');
