@@ -22,7 +22,7 @@ if(!isset($_SESSION))
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
             <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
+            <a href="#services" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
             <a href="/marieteam_php/public/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
