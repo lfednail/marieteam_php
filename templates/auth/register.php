@@ -11,7 +11,7 @@
 ?>
 
 <!-- Login Form -->
-<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded mt-12">
+<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded mt-12 my-10">
 	<h2 class="text-3xl font-bold text-center mb-6">Register</h2>
 
 	<form action="try_register" method="POST">

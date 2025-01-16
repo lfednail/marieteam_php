@@ -1,5 +1,5 @@
 <?php if(isset($_SESSION['user'])): ?>
-    <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded">
+    <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded my-10">
         <h2 class="text-3xl font-bold text-center mb-6">Edit Profile</h2>
 
         <form action="try_editProfile/<?= $_SESSION['user']['id_Utilisateur'] ?>" method="post">
