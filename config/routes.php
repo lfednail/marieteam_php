@@ -58,15 +58,15 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'tryRegister'
     ],
-    'profil' => [
+    'profile' => [
         'controller'=> App\Controller\MainController::class,
-        'method' => 'profil'
+        'method' => 'profile'
     ],
-    'profil/editProfil' => [
+    'profile/editProfil' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'editProfil'
     ],
-    'profil/try_editProfil/{id}' => [
+    'profile/try_editProfil/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'tryEditProfil'
     ]

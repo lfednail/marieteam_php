@@ -79,11 +79,11 @@ class MainController extends AbstractController {
     }
 
     public function profil(){
-        return $this->renderView('main/profil.php', ['title' => 'Your profile']);
+        return $this->renderView('main/profile.php', ['title' => 'Your profile']);
     }
 
     public function editProfil(){
-        return $this->renderView('profil/edit_profil.php', ['title' => 'EditProfil']);
+        return $this->renderView('profile/edit_profile.php', ['title' => 'EditProfil']);
     }
 
     public function tryEditProfil(array $data){

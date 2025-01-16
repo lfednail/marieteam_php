@@ -35,27 +35,27 @@ if(isset($_SESSION['user'])){
                         if(empty($errorPwd)){
                             $cryptPassword = hash($_POST['Mot_de_passe']);
                             $db->update("UPDATE utilisateur SET Nom_utilisateur, Prenom_utilisateur, Mail, Mot_de_passe VALUES ('{$_POST['Nom_utilisateur']}', '{$_POST['Prenom_utilisateur']}', '{$_POST['Mail']}', '{$cryptPassword}') WHERE id_Utilisateur = {$_SESSION['id_Utilisateur']} ");
-                            header('location: /marieteam_php/public/profil/');
+                            header('location: /marieteam_php/public/profile/');
                         }else{
                             foreach ($errorPwd as $ePwd)
                                 $_POST['error'][] = $ePwd;
-                            header('location: /marieteam_php/public/profil/');
+                            header('location: /marieteam_php/public/profile/');
                         }
                     }else{
                         $_POST['error'][] = "SQL injection tentative detected.";
-                        header('location: /marieteam_php/public/profil/');
+                        header('location: /marieteam_php/public/profile/');
                     }
                 }else{
                     $_POST['error'][] = "Your password and your confirmation of password do not correspond. ";
-                    header('location: /marieteam_php/public/profil/');
+                    header('location: /marieteam_php/public/profile/');
                 }
             }else{
             }
         }
     }else{
         $_POST['error'][] = "All element of the form (except what pretend to the password) must be fill. ";
-        header('location: /marieteam_php/public/profil/');
+        header('location: /marieteam_php/public/profile/');
     }
 }else {
-    header('location: /marieteam_php/public/profil/');
+    header('location: /marieteam_php/public/profile/');
 }
