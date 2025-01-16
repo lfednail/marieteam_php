@@ -27,7 +27,7 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-blue-800 mb-6">Our Services</h2>
             <p class="text-gray-600 mb-12">
-                Discover our dynamic solutions for cruises and fret.
+                Discover our dynamic solutions for cruises and frets.
             </p>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Service de Voyage -->
