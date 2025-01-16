@@ -2,10 +2,10 @@
     <h5><?= $_SESSION['user']['Nom_utilisateur'] . ' ' . $_SESSION['user']['Prenom_utilisateur'] ?></h5>
     <br>
 
-    <a href="profil/editProfile">Edit profile</a>
+    <a href="profile/editProfile">Edit profile</a>
     <br>
 
-    <a href="profil/reservation">Your reservation</a>
+    <a href="profile/reservation">Your reservation</a>
     <br>
 
     <a href="logout">Disconnection</a>
