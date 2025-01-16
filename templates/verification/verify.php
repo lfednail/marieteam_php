@@ -1,40 +1,51 @@
 <?php
 
-function verifieString(string $stringVerify): bool{
-
+function verifieString(string $stringVerify): bool
+{
     $capStringVerify = strtoupper($stringVerify);
 
-    //verify presence SQL component
-    if(
-        (preg_match('/\bSELECT\b/',$capStringVerify)) ||
-        (preg_match('/\bFROM\b/', $capStringVerify)) ||
-        (preg_match('/\bWHERE\b/', $capStringVerify)) ||
-        (preg_match('/\bINSERT\b/', $capStringVerify)) ||
-        (preg_match('/\bUPDATE\b/', $capStringVerify)) ||
-        (preg_match('/\bDELETE\b/', $capStringVerify)) ||
-        (preg_match('/\bSET\b/', $capStringVerify)) ||
-        (preg_match('/\bINTO\b/', $capStringVerify)) ||
-        (preg_match('/\bCREATE\b/', $capStringVerify))
+    // Verify presence of SQL keywords to prevent SQL injection
+    $sqlKeywords = ['SELECT', 'FROM', 'WHERE', 'INSERT', 'UPDATE', 'DELETE', 'SET', 'INTO', 'CREATE'];
 
-    )   return false;
+    foreach ($sqlKeywords as $keyword) {
+        if (preg_match('/\b' . preg_quote($keyword, '/') . '\b/', $capStringVerify)) {
+            return false;
+        }
+    }
 
-    //return if no SQL element
+    // Return true if no SQL keywords are found
     return true;
-
 }
 
-function verifyPassword(string $passwordVerify){
-    //test CNIL requirement
-    $error = [];
-    if(!preg_match('/[a-z]/', $passwordVerify)) //verify the presence of character between a and z
-        $error[] = "A lowercase character is required";
-    if(!preg_match('/[A-Z]/', $passwordVerify)) //verify the presence of character between A and Z
-        $error[] = "An uppercase character is required";
-    if(!preg_match('/\d/', $passwordVerify)) //verify the presence of number
-        $error[] = "A number is require";
-    if (!preg_match('/\W/', $passwordVerify)) //verify the presence of special character
-        $error [] = "A special character is required";
-    if(strlen($passwordVerify)<= 12) //verify the length of $passwordVerify
-        $error[] = "The password must have size of 12 character minimum";
-    return $error;
+function verifyPassword(string $passwordVerify): array
+{
+    // CNIL password requirements validation
+    $errors = [];
+
+    // Check for at least one lowercase character
+    if (!preg_match('/[a-z]/', $passwordVerify)) {
+        $errors[] = "A lowercase character is required.";
+    }
+
+    // Check for at least one uppercase character
+    if (!preg_match('/[A-Z]/', $passwordVerify)) {
+        $errors[] = "An uppercase character is required.";
+    }
+
+    // Check for at least one number
+    if (!preg_match('/\d/', $passwordVerify)) {
+        $errors[] = "A number is required.";
+    }
+
+    // Check for at least one special character
+    if (!preg_match('/\W/', $passwordVerify)) {
+        $errors[] = "A special character is required.";
+    }
+
+    // Check the minimum length of the password
+    if (strlen($passwordVerify) < 12) {
+        $errors[] = "The password must be at least 12 characters long.";
+    }
+
+    return $errors;
 }

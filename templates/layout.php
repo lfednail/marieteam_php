@@ -22,13 +22,16 @@ if(!isset($_SESSION))
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
             <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
+            <a href="#services" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-            <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
             <a href="/marieteam_php/public/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
             <?php if(isset($_SESSION['user'])): ?>
-                <a></a><!-- to put space -->
-                <a href="/marieteam_php/public/profile">Profile</a>
+                <?php if(($_SESSION['user']['Role'] == "Admin") || ($_SESSION['user']['Role'] == "admin")): ?>
+                    <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
+                <?php else:?>
+                    <a></a><!-- put space -->
+                <?php endif;?>
+                <a href="/marieteam_php/public/profile" class="text-gray-300 text-xl hover:text-white">Profile</a>
             <?php else: ?>
                 <a href="/marieteam_php/public/login" class="text-gray-300 text-xl hover:text-white">Connection</a>
                 <a href="/marieteam_php/public/register" class="text-gray-300 text-xl hover:text-white">Register</a>
@@ -45,11 +48,22 @@ if(!isset($_SESSION))
 
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-6 mt-2 bg-blue-950 p-6 rounded"> <!-- Increased padding -->
-        <a href="" class="text-gray-300 text-2xl hover:text-white">Home</a><!-- Increased font size -->
+        <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-        <a href="#services" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
+        <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
-        <a href="liaisons" class="text-gray-300 text-xl hover:text-white">Les liaisons</a>
+        <a href="/marieteam_php/public/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
+        <?php if(isset($_SESSION['user'])): ?>
+            <?php if(($_SESSION['user']['Role'] == "Admin") || ($_SESSION['user']['Role'] == "admin")): ?>
+                <a href="/marieteam_php/public/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
+            <?php else:?>
+                <a></a><!-- put space -->
+            <?php endif;?>
+            <a href="/marieteam_php/public/profile" class="text-gray-300 text-xl hover:text-white">Profile</a>
+        <?php else: ?>
+            <a href="/marieteam_php/public/login" class="text-gray-300 text-xl hover:text-white">Connection</a>
+            <a href="/marieteam_php/public/register" class="text-gray-300 text-xl hover:text-white">Register</a>
+        <?php endif; ?>
     </div>
 </nav>
 <?php require $templatePath; ?><br>
@@ -61,7 +75,6 @@ if(!isset($_SESSION))
             <a href="#" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
             <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
             <a href="#" class="text-gray-300 hover:text-white mx-2">Contact</a>
-            <a href="auth/login" class="text-gray-300 hover:text-white mx-2">Connexion</a>
         </div>
     </div>
 </footer>
