@@ -13,25 +13,25 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisons'
     ],
-    'liaisons/{id}' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'liaisonById'
-    ],
     'liaisons/create' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonCreate'
-    ],
-    'liaisons/edit/{id}' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'liaisonEdit'
     ],
     'liaisons/try_create' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonTryCreate'
     ],
+    'liaisons/edit/{id}' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'liaisonEdit'
+    ],
     'liaisons/try_edit/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonTryEdit'
+    ],
+    'liaisons/{id}' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'liaisonById'
     ],
     'crossing' => [
         'controller' => App\Controller\MainController::class,
