@@ -4,10 +4,11 @@ $listLiaisons = $db->select("select * from liaison");
 
 ?>
 
-<div class="flex" >
+<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded space-y-5 my-10 ">
 
     <?php foreach ($listLiaisons as $liaison):?>
-        <div class="p-5">
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden  max-w-sm p-4">
 
             <h5>
                 <a href=<?= "liaisons/" . $liaison["id_Liaison"] ?> >
@@ -17,6 +18,7 @@ $listLiaisons = $db->select("select * from liaison");
 
             <sub><?= $liaison["Distance_liaison"] ?> km</sub>
         </div>
+    <br>
     <?php endforeach; ?>
 
 </div>

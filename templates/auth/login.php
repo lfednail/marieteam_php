@@ -10,7 +10,7 @@ if(isset($_SESSION['error'])){
 }
 ?>
 
-<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded">
+<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded my-10 " >
 	<h2 class="text-3xl font-bold text-center mb-6">Login</h2>
 
 	<form action="try_login" method="POST">
