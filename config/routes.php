@@ -69,6 +69,10 @@ const ROUTES = [
     'profile/try_editProfile/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'tryEditProfile'
-    ]
+    ],
+    'about' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'about'
+    ],
 
 ];

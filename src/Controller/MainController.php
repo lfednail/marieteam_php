@@ -93,4 +93,8 @@ class MainController extends AbstractController {
         ]);
     }
 
+    public function about(){
+        return $this->renderView('main/about.php', ['title' => 'About']);
+    }
+
 }

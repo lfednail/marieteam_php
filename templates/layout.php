@@ -21,7 +21,7 @@ if(!isset($_SESSION))
         <!-- Links (hidden on mobile) -->
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
             <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
+            <a href="/marieteam_php/public/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#services" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/public/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
@@ -49,7 +49,7 @@ if(!isset($_SESSION))
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-6 mt-2 bg-blue-950 p-6 rounded"> <!-- Increased padding -->
         <a href="/marieteam_php/public/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
+        <a href="/marieteam_php/public/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
         <a href="/marieteam_php/public/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
@@ -66,7 +66,10 @@ if(!isset($_SESSION))
         <?php endif; ?>
     </div>
 </nav>
-<?php require $templatePath; ?><br>
+    <div class="m-2" style="min-height: 74.5vh;">
+        <?php require $templatePath; ?>
+    </div>
+
 
 <footer class="bg-blue-950 p-6 mt-12">
     <div class="container mx-auto text-center text-white">
