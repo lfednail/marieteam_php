@@ -4,7 +4,7 @@ require_once 'verify.php';
 $requiredFields = ['Lieu_depart', 'Lieu_arrivee', 'Distance_liaison'];
 if (array_diff($requiredFields, array_keys($_POST))) {
     $_POST['error'][] = "All fields must be filled.";
-    header('location: /marieteam_php/public/liaison/try_edit/' . $data['id']);
+    header('location: /marieteam_php/liaison/try_edit/' . $data['id']);
     exit;
 }
 
@@ -24,6 +24,6 @@ if (
                  WHERE id_Liaison = '{$data['id']}'");
 } else {
     $_POST['error'][] = "SQL injection attempt detected.";
-    header('location: /marieteam_php/public/liaison/try_edit/' . $data['id']);
+    header('location: /marieteam_php/liaison/try_edit/' . $data['id']);
     exit;
 }

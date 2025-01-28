@@ -58,6 +58,6 @@ $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `
 
 // Set user session and redirect
 $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '{$_POST['email']}'");
-header('Location: /marieteam_php/public');
+header('Location: /marieteam_php');
 exit;
 

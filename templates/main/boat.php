@@ -18,7 +18,7 @@ $boatFret = $db->select("select * from viewfret");
         <?php $listEquipement = $db->select("Select * from viewliste_equipement wher id_Bateau = {$cruse['id_Bateau']}") ?>
         <div class="p-5">
             
-            <img src="/marieteam_php/public/assets/<?= $picture['Nom_image'] . "." . $picture['Extension'] ?>" alt="image du bateau">
+            <img src="/marieteam_php/assets/<?= $picture['Nom_image'] . "." . $picture['Extension'] ?>" alt="image du bateau">
             <h5><?= $cruse['Nom_bateau']?></h5>
             <br>
 

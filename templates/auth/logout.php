@@ -1,5 +1,5 @@
 <?php
 if(isset($_SESSION['user'])){
     unset($_SESSION['user']);
-    header('location: /marieteam_php/public');
+    header('location: /marieteam_php');
 }

@@ -2,7 +2,7 @@
 require_once 'verify.php';
 
 if (!isset($_SESSION['user'])) {
-    header('location: /marieteam_php/public/');
+    header('location: /marieteam_php/');
     exit;
 }
 
@@ -14,7 +14,7 @@ if (!array_diff($requiredFields, array_keys($_POST))) {
 
     if (!$validData) {
         $_POST['error'][] = "SQL injection tentative detected.";
-        header('location: /marieteam_php/public/profile/editProfile');
+        header('location: /marieteam_php/profile/editProfile');
         exit;
     }
 
@@ -39,27 +39,27 @@ if (!array_diff($requiredFields, array_keys($_POST))) {
                     foreach ($errorPwd as $ePwd) {
                         $_POST['error'][] = $ePwd;
                     }
-                    header('location: /marieteam_php/public/profile/editProfile');
+                    header('location: /marieteam_php/profile/editProfile');
                     exit;
                 }
             } else {
                 $_POST['error'][] = "Invalid password.";
-                header('location: /marieteam_php/public/profile/editProfile');
+                header('location: /marieteam_php/profile/editProfile');
                 exit;
             }
         } else {
             $_POST['error'][] = "Password and confirmation do not match.";
-            header('location: /marieteam_php/public/profile/editProfile');
+            header('location: /marieteam_php/profile/editProfile');
             exit;
         }
     }
 
     $db->update($updateQuery);
-    header('location: /marieteam_php/public/profile/');
+    header('location: /marieteam_php/profile/');
     exit;
 
 } else {
     $_POST['error'][] = "All form fields (except password) must be filled.";
-    header('location: /marieteam_php/public/profile/editProfile');
+    header('location: /marieteam_php/profile/editProfile');
     exit;
 }

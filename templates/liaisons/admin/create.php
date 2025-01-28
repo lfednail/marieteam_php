@@ -22,6 +22,6 @@
             </form>
         </div>
     <?php endif; ?>
-    <?php header('location: /marieteam_php/public/liaisons'); ?>
+    <?php header('location: /marieteam_php/liaisons'); ?>
 <?php endif; ?>
-<?php header('location: /marieteam_php/public/liaisons'); ?>
+<?php header('location: /marieteam_php/liaisons'); ?>

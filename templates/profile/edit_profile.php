@@ -34,5 +34,5 @@
         </form>
     </div
 <?php else: ?>
-    <?php header('location: /marieteam_php/public'); ?>
+    <?php header('location: /marieteam_php'); ?>
 <?php endif; ?>

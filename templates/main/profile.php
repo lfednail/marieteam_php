@@ -10,5 +10,5 @@
 
     <a href="logout">Disconnection</a>
 <?php else: ?>
-    <?php header('location: /marieteam/public'); ?>
+    <?php header('location: /marieteam'); ?>
 <?php endif; ?>

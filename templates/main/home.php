@@ -2,7 +2,7 @@
 <header class="relative bg-blue-700 text-white py-20">
     <!-- Image de fond floutée -->
     <div class="absolute inset-0">
-        <img src="/marieteam_php/public/assets/image-header.jpg" alt="Paysage maritime"
+        <img src="/marieteam_php/assets/image-header.jpg" alt="Paysage maritime"
              class="w-full h-full object-cover blur-md opacity-60">
     </div>
 
@@ -32,7 +32,7 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Service de Voyage -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden mx-auto max-w-sm">
-                    <img src="/marieteam_php/public/assets/sunset-voyages.jpg" alt="Service de Voyage" class="w-full h-48 object-cover">
+                    <img src="/marieteam_php/assets/sunset-voyages.jpg" alt="Service de Voyage" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-blue-800">Cruise services</h3>
                         <p class="mt-4 text-gray-600">
@@ -46,7 +46,7 @@
 
                 <!-- Service de Fret Maritime -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden mx-auto max-w-sm">
-                    <img src="/marieteam_php/public/assets/Modern-cargo-ship.png" alt="Service de Fret Maritime" class="w-full h-48 object-cover">
+                    <img src="/marieteam_php/assets/Modern-cargo-ship.png" alt="Service de Fret Maritime" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-blue-800">Marieteam Fret service</h3>
                         <p class="mt-4 text-gray-600">

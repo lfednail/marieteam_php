@@ -48,6 +48,6 @@ if (!password_verify($_POST["password"], $users["Mot_de_passe"])) {
 
 // Successful login
 $_SESSION['user'] = $users;
-header('Location: /marieteam_php/public');
+header('Location: /marieteam_php');
 exit;
 
