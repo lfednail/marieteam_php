@@ -66,7 +66,7 @@ if(!isset($_SESSION))
         <?php endif; ?>
     </div>
 </nav>
-    <div style="min-height: 77.6vh;">
+    <div style="min-height: 81.8vh;">
         <?php require $template; ?>
     </div>
 <footer class="bg-blue-950 p-6">
