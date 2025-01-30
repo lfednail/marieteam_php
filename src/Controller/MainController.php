@@ -6,12 +6,12 @@ class MainController extends AbstractController {
 
     public function home(): string
     {
-		return $this->renderView('main/home.php', ['title' => 'Home']);
+		return $this->renderView('vue/viewHome.php', ['title' => 'Home']);
 	}
 
     public function contact() {
 		// Imaginons ici traiter la soumission d'un formulaire de contact et envoyer un mail...
-		return $this->redirectToRoute('home', ['state' => 'success']);
+		return $this->redirectToRoute('vue/home', ['state' => 'success']);
 	}
 
     public function liaisons(): string
@@ -94,7 +94,7 @@ class MainController extends AbstractController {
     }
 
     public function about(){
-        return $this->renderView('main/about.php', ['title' => 'About']);
+        return $this->renderView('vue/viewAbout.php', ['title' => 'About']);
     }
 
 }
