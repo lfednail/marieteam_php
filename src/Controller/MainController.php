@@ -11,7 +11,7 @@ class MainController extends AbstractController {
 
     public function contact() {
 		// Imaginons ici traiter la soumission d'un formulaire de contact et envoyer un mail...
-		return $this->redirectToRoute('vue/home', ['state' => 'success']);
+		return $this->redirectToRoute('vue/viewHome', ['state' => 'success']);
 	}
 
     public function liaisons(): string
@@ -57,25 +57,16 @@ class MainController extends AbstractController {
 
     public function login(): string
     {
-        return $this->renderView('auth/login.php', ['title' => 'Connection']);
+        return $this->renderView('controllerpage/login.php', ['title' => 'Login']);
     }
 
     public function register(): string
     {
-        return $this->renderView('auth/register.php', ['title' => 'Connection']);
+        return $this->renderView('controllerpage/register.php', ['title' => 'Register']);
     }
 
     public function logout(){
-        return $this->renderView('auth/logout.php', ['title' => 'Deconnection']);
-    }
-
-    public function tryLogin (){
-        return $this->renderView('verification/try_login.php', ['title' => 'TryLogin']);
-    }
-
-    public function tryRegister ()
-    {
-        return $this->renderView('verification/try_register.php', ['title' => 'TryRegiter']);
+        return $this->renderView('controllerpage/logout.php', ['title' => 'Deconnection']);
     }
 
     public function profile(){
@@ -83,14 +74,7 @@ class MainController extends AbstractController {
     }
 
     public function editProfile(){
-        return $this->renderView('vue/viewEditProfile.php', ['title' => 'EditProfil']);
-    }
-
-    public function tryEditProfile(array $data){
-        return $this->renderView('verification/try_editProfile.php', [
-            'title' => 'TryEditProfile',
-            'id' => $data['id']
-        ]);
+        return $this->renderView('controllerpage/editProfile.php', ['title' => 'EditProfil']);
     }
 
     public function about(){

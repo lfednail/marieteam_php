@@ -11,12 +11,12 @@ class BDD{
 
     public function select(string $sql){
         $resp = $this->BDD->query($sql);
-        return  $resp ? $resp->fetchAll(PDO::FETCH_ASSOC) : null ;
+        return  $resp ? $resp->fetchAll(PDO::FETCH_ASSOC) : [];
     }
 
     public function selectOne(string $sql){
         $resp = $this->BDD->query($sql);
-        return  $resp ? $resp->fetch(PDO::FETCH_ASSOC) : null ;
+        return  $resp ? $resp->fetch(PDO::FETCH_ASSOC) : [];
     }
 
     public function insert(string $sql){

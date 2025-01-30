@@ -1,4 +1,5 @@
 <?php
+global $db;
 require_once 'verify.php';
 
 if (!isset($_SESSION['user'])) {

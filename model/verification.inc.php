@@ -1,5 +1,4 @@
 <?php
-
 function verifieString(string $stringVerify): bool
 {
     $capStringVerify = strtoupper($stringVerify);
@@ -12,7 +11,6 @@ function verifieString(string $stringVerify): bool
             return false;
         }
     }
-
     // Return true if no SQL keywords are found
     return true;
 }

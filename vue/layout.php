@@ -66,12 +66,10 @@ if(!isset($_SESSION))
         <?php endif; ?>
     </div>
 </nav>
-    <div style="min-height: 76.7vh;">
-        <?php require $templatePath; ?>
+    <div style="min-height: 77.6vh;">
+        <?php require $template; ?>
     </div>
-
-
-<footer class="bg-blue-950 p-6 mt-12">
+<footer class="bg-blue-950 p-6">
     <div class="container mx-auto text-center text-white">
         <p class="text-lg">© 2024 MarieTeam. All rights reserved.</p>
         <div class="mt-4">
@@ -90,8 +88,5 @@ if(!isset($_SESSION))
         mobileMenu.classList.toggle('hidden');
     });
 </script>
-
-
-
 </body>
 </html>
