@@ -6,9 +6,9 @@ if(isset($_SESSION['user'])){
         $db = new BDD();
 
         if (isset($data['id'])) {
-            require dirname(__DIR__) . "/liaisons/detail.php";
+            require dirname(__DIR__) . "vue/viewLiaisonDetail.php";
         } else {
-            require dirname(__DIR__) . "/liaisons/list.php";
+            require dirname(__DIR__) . "vue/viewLiaisonList.php";
         }
 
     }
