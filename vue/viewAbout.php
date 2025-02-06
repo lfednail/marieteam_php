@@ -7,7 +7,7 @@
             <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Mission</h2>
             <p class="text-xl text-gray-700 mb-8 leading-relaxed">Our mission is to facilitate the mobility of people and goods around the world by offering safe and efficient transport solutions fitted for all need, all the while offering an outsanding ewperience to our clients.</p>
 
-            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Nos Valeurs</h2>
+            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Values</h2>
             <ul class="list-disc list-inside text-lg text-gray-800 space-y-4">
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Liability : guaranteeing a reliable and secure delivery.</li>
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Innovation : utilizing the most advanced technologies for service optimization.</li>
@@ -15,7 +15,7 @@
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Customer Service : a attentive listening and a personalized approach for each client.</li>
             </ul>
 
-            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Nos Services</h2>
+            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Services</h2>
             <p class="text-xl text-gray-700 mb-6">We offer a wide range of travel and freight services, including:</p>
             <ul class="list-disc list-inside text-lg text-gray-800 space-y-4">
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Business and Tourism Trips.</li>
