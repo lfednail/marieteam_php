@@ -74,7 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
             <!-- Profile details -->
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Profile Details</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="p-4 border rounded-lg"> ?></p>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-bold text-gray-600">Email</h4>
+                    <p class="text-gray-800"><?= $_SESSION['user']['Mail'] ?></p>
                 </div>
                 <div class="p-4 border rounded-lg">
                     <h4 class="font-bold text-gray-600">Registration Date</h4>
@@ -89,13 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
             <!-- Action buttons -->
             <div class="flex flex-col md:flex-row gap-4">
                 <a href="profile/editProfile" class="flex-1 text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-                  Edit Profile
+                     Edit Profile
                 </a>
                 <a href="profile/reservation" class="flex-1 text-center bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
-                  My Reservations
+                     My Reservations
                 </a>
                 <a href="logout" class="flex-1 text-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
-                  Logout
+                    Logout
                 </a>
             </div>
         </div>
