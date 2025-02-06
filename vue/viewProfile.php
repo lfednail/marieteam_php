@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
         $errors[] = "Le fichier sélectionné n'est pas une image valide.";
     } else {
         if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile)) {
-            // Mettez à jour l'avatar dans la session (à sauvegarder aussi dans la BDD si nécessaire)
+            // Mettez à jour l'avatar dans la session (et dans la BDD si nécessaire)
             $_SESSION['user']['avatar'] = $uploadFile;
         } else {
             $errors[] = "L'upload de l'image a échoué.";
@@ -42,6 +42,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
     <title>Mon Profil</title>
     <!-- Inclusion de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inclusion de Font Awesome pour l'icône (optionnel) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap0Gl6gvQk9+Sx25u2TQFRQp7En5GqqltmUlBTJl0v+qYB3BwIjgWQyW1Il8JbF4nVujCskOup0Ch7e3vBfZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Styles pour l'overlay sur l'image */
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+        }
+        .avatar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .avatar-container:hover .avatar-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <div class="max-w-6xl mx-auto mt-10 p-4">
@@ -51,13 +77,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
             <div class="bg-gradient-to-b from-blue-600 to-purple-600 p-6 flex flex-col items-center md:w-1/3">
                 <!-- Formulaire d'upload de l'avatar -->
                 <form action="" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
-                    <label for="avatarInput" class="cursor-pointer">
-                        <img class="w-32 h-32 rounded-full border-4 border-white shadow-md hover:opacity-80 transition"
+                    <label for="avatarInput" class="cursor-pointer avatar-container">
+                        <img class="w-32 h-32 rounded-full border-4 border-white shadow-md transition hover:opacity-90"
                              src="<?= isset($_SESSION['user']['avatar']) ? $_SESSION['user']['avatar'] : 'https://via.placeholder.com/150' ?>"
                              alt="Avatar">
+                        <!-- Overlay avec icône de crayon -->
+                        <div class="avatar-overlay">
+                            <i class="fa-solid fa-pencil text-white text-2xl"></i>
+                        </div>
                     </label>
                     <input type="file" id="avatarInput" name="avatar" class="hidden" accept="image/*" onchange="this.form.submit()">
-                    <p class="mt-2 text-white text-sm">Cliquez sur l'image pour changer votre avatar</p>
                 </form>
                 <!-- Informations essentielles -->
                 <div class="mt-4 text-center">
@@ -92,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
                         <h4 class="font-bold text-gray-600">Rôle</h4>
                         <p class="text-gray-800"><?= $_SESSION['user']['role'] ?? 'Utilisateur' ?></p>
                     </div>
-                    <!-- Vous pouvez ajouter d'autres informations ici -->
+                    <!-- Ajoutez d'autres informations ici si besoin -->
                 </div>
                 <!-- Boutons d'actions -->
                 <div class="flex flex-col md:flex-row gap-4">
