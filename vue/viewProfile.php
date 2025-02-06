@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // Rediriger l'utilisateur s'il n'est pas connecté
 if (!isset($_SESSION['user'])) {
