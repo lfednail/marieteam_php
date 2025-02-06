@@ -5,59 +5,54 @@ use App\DB\BDD;
 require_once 'verification.inc.php';
 global $db;
 $db = new BDD();
-function editProfile(): array
+function editProfile(int $id_Utilisateur, string $last_name, string $first_name, string $email, string $password = null, string $passwordConfirmation = null): array
 {
 	global $db;
 	$errors=[];
-	if (!isset($_SESSION['user'])) {
-		header('location: /marieteam_php/home');
-		exit;
-	}
+    if(
+        !verifieString($_POST['Nom_utilisateur']) ||
+        !verifieString($_POST['Prenom_utilisateur']) ||
+        !verifieString($_POST['Mail'])
+    )
+        {
+        $errors[] = "SQL injection attempt detected.";
+    }
 
-	$requiredFields = ['Nom_utilisateur', 'Prenom_utilisateur', 'Mail'];
-	if (!array_diff($requiredFields, array_keys($_POST))) {
-		$validData = verifieString($_POST['Nom_utilisateur']) &&
-			verifieString($_POST['Prenom_utilisateur']) &&
-			verifieString($_POST['Mail']);
+    //if password not changed
+    if(!isset($password) && !isset($passwordConf)) {
+        $password = $_SESSION['user']['Mot_de_passe'];
+    }else{//if password changed
 
-		if (!$validData) {
-			$errors[] = "SQL injection tentative detected.";
-		}
+        //check if password equals password confirmation
+        if($password != $passwordConfirmation){
+            $errors[] = "Password and confirmation do not match.";
+        }
 
-		$updateQuery = "UPDATE utilisateur SET Nom_utilisateur = '{$_POST['Nom_utilisateur']}', 
-                                            Prenom_utilisateur = '{$_POST['Prenom_utilisateur']}', 
-                                            Mail = '{$_POST['Mail']}' 
-                    WHERE id_Utilisateur = {$_POST['id_Utilisateur']}";
+        //check if password not SQLinjection attempt
+        if(verifieString($password)){
+            $errors[] = "SQL injection attempt detected.";
+        }
 
-		if (!empty($_POST['Mot_de_passe'])) {
-			if (isset($_POST['Mot_de_passeConf']) && $_POST['Mot_de_passe'] === $_POST['Mot_de_passeConf']) {
-				$validPassword = verifieString($_POST['Mot_de_passe']);
-				if ($validPassword) {
-					$errorPwd = verifyPassword($_POST['Mot_de_passe']);
-					if (empty($errorPwd)) {
-						$cryptPassword = hash($_POST['Mot_de_passe']);
-						$updateQuery = "UPDATE utilisateur SET Nom_utilisateur = '{$_POST['Nom_utilisateur']}', 
-                                                        Prenom_utilisateur = '{$_POST['Prenom_utilisateur']}', 
-                                                        Mail = '{$_POST['Mail']}', 
-                                                        Mot_de_passe = '{$cryptPassword}' 
-                                    WHERE id_Utilisateur = {$_POST['id_Utilisateur']}";
-					} else {
-						foreach ($errorPwd as $ePwd) {
-							$errors[] = $ePwd;
-						}
-					}
-				} else {
-					$errors[] = "Invalid password.";
-				}
-			} else {
-				$errors[] = "Password and confirmation do not match.";
-			}
-		}
+        //check if password is valid
+        $errorPwd = verifyPassword($password);
+        if(!empty($errorPwd)){
+            foreach($errorPwd as $ePwd){
+                $errors[] = $ePwd;
+            }
+        }
+    }
 
-		$db->update($updateQuery);
+    if(empty($errors)){
+        $cryptPassword = password_hash($password, PASSWORD_DEFAULT);
+        $updateQuery = "UPDATE utilisateur SET Nom_utilisateur = '$last_name',
+                                                    Prenom_utilisateur = '{$first_name}',
+                                                    Mail = '{$email}',
+                                                    Mot_de_passe = '{$cryptPassword}'
+                                   WHERE id_Utilisateur = {$id_Utilisateur}";
+        $db->update($updateQuery);
 
-	} else {
-		$errors[] = "All form fields (except password) must be filled.";
-	}
+        $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE id_Utilisateur = {$id_Utilisateur}");
+    }
+
 	return $errors;
 }

@@ -5,7 +5,6 @@ namespace App\Controller;
 abstract class AbstractController {
 
 	protected function renderView(string $template, array $data = []): string {
-		$templatePath = $template;
 		return require_once 'vue/layout.php';
 	}
 

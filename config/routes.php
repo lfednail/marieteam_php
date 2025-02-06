@@ -50,14 +50,6 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'logout'
     ],
-    'try_login' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'tryLogin'
-    ],
-    'try_register' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'tryRegister'
-    ],
     'profile' => [
         'controller'=> App\Controller\MainController::class,
         'method' => 'profile'
@@ -65,10 +57,6 @@ const ROUTES = [
     'profile/editProfile' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'editProfile'
-    ],
-    'profile/try_editProfile/{id}' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'tryEditProfile'
     ],
     'about' => [
         'controller' => App\Controller\MainController::class,
