@@ -21,9 +21,19 @@ if(!empty($errors)){
 		<div class="mb-6">
 			<label for="password" class="block text-gray-700">Password</label>
 			<input type="password" id="password" name="password" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
+		     <div class="mt-4">
+                <input type="checkbox" id="show-password" class="mr-2">
+                <label for="show-password" class="text-gray-700 text-sm">Show Password</label>
+             </div>
 		</div>
 		<button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
 	</form>
 	<p class = "py-2 text-sm">You don't have an account? Create one!</p>
     <button type="button" onclick=location.href="register" class="w-40 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Register</button>
 </div>
+<script>
+    document.getElementById('show-password').addEventListener('change', function () {
+        const passwordField = document.getElementById('password');
+        passwordField.type = this.checked ? 'text' : 'password';
+    });
+</script>

@@ -1,5 +1,5 @@
 <!-- Main content -->
-    <main class="pt-28 px-6">
+    <main class="px-20 py-20">
         <div class="container mx-auto bg-white text-gray-900 p-12 rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl">
             <h1 class="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-400 mb-6">About MarieTeam</h1>
             <p class="text-lg text-gray-800 mb-10">MarieTeam is a visionary company specialised in international travel and transport by fret. We push the limits to offer high quality hyper-personalised services to our clients, be it business trips, tourism or international freight transport.</p>
@@ -7,7 +7,7 @@
             <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Mission</h2>
             <p class="text-xl text-gray-700 mb-8 leading-relaxed">Our mission is to facilitate the mobility of people and goods around the world by offering safe and efficient transport solutions fitted for all need, all the while offering an outsanding ewperience to our clients.</p>
 
-            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Nos Valeurs</h2>
+            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Values</h2>
             <ul class="list-disc list-inside text-lg text-gray-800 space-y-4">
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Liability : guaranteeing a reliable and secure delivery.</li>
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Innovation : utilizing the most advanced technologies for service optimization.</li>
@@ -15,7 +15,7 @@
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Customer Service : a attentive listening and a personalized approach for each client.</li>
             </ul>
 
-            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Nos Services</h2>
+            <h2 class="text-3xl font-semibold text-indigo-600 mb-4">Our Services</h2>
             <p class="text-xl text-gray-700 mb-6">We offer a wide range of travel and freight services, including:</p>
             <ul class="list-disc list-inside text-lg text-gray-800 space-y-4">
                 <li class="transition-all duration-300 hover:text-orange-500 hover:scale-105">Business and Tourism Trips.</li>
