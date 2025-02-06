@@ -22,15 +22,12 @@ if(!isset($_SESSION))
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
             <a href="/marieteam_php/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="/marieteam_php/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-            <a href="#services" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
+            <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
+            <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
             <?php if(isset($_SESSION['user'])): ?>
-                <?php if(($_SESSION['user']['Role'] == "Admin") || ($_SESSION['user']['Role'] == "admin")): ?>
-                    <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
-                <?php else:?>
-                    <a></a><!-- put space -->
-                <?php endif;?>
+                <a></a><!-- put space -->
                 <a href="/marieteam_php/profile" class="text-gray-300 text-xl hover:text-white">Profile</a>
             <?php else: ?>
                 <a href="/marieteam_php/login" class="text-gray-300 text-xl hover:text-white">Connection</a>
@@ -53,12 +50,9 @@ if(!isset($_SESSION))
         <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
         <a href="/marieteam_php/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
+        <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
         <?php if(isset($_SESSION['user'])): ?>
-            <?php if(($_SESSION['user']['Role'] == "Admin") || ($_SESSION['user']['Role'] == "admin")): ?>
-                <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
-            <?php else:?>
-                <a></a><!-- put space -->
-            <?php endif;?>
+            <a></a><!-- put space -->
             <a href="/marieteam_php/profile" class="text-gray-300 text-xl hover:text-white">Profile</a>
         <?php else: ?>
             <a href="/marieteam_php/login" class="text-gray-300 text-xl hover:text-white">Connection</a>

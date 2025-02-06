@@ -11,22 +11,22 @@ class MainController extends AbstractController {
 
     public function contact() {
 		// Imaginons ici traiter la soumission d'un formulaire de contact et envoyer un mail...
-		return $this->redirectToRoute('vue/viewHome', ['state' => 'success']);
+		$this->redirectToRoute('vue/viewHome', ['state' => 'success']);
 	}
 
     public function liaisons(): string
     {
-        return $this->renderView('main/liaisons.php', ['title' => 'Liaisons']);
+        return $this->renderView('controllerpage/liaisons.php', ['title' => 'Liaisons']);
     }
 
     public function liaisonById(array $data){
-        return $this->renderView(
-            'main/liaisons.php',
+        $this->renderView(
+            'controllerpage/liaisons.php',
             [
                 'title' => 'Liaisons',
                 'id' => $data['id']
-            ])
-            ;
+            ]
+        );
     }
 
     public function liaisonCreate(){
@@ -52,7 +52,7 @@ class MainController extends AbstractController {
     }
 
     public function crossing(){
-        return $this->renderView('main/crossing.php', ['title' => 'Traversee']);
+        return $this->renderView('main/liaisons.php', ['title' => 'Traversee']);
     }
 
     public function login(): string

@@ -1,7 +1,7 @@
 <?php
 
 $listLiaisonTarif = $db->select("Select * from viewtarif_liaison where id_Liaison = ${data['id']} order by Libelle_categorie_tarif  ");
-$listTraverseeLiaison = $db->select("Select vt.* from viewtraversee as vt, traversee as t where t.id_Liaison = ${data['id']} and t.id_Traversee = vt.id_Traversee");
+$crossing = $db->select("Select vt.* from viewtraversee as vt, traversee as t where t.id_Liaison = ${data['id']} and t.id_Traversee = vt.id_Traversee");
 $periodes = $db->select("Select * from periode");
 
 //donnees pour la liste des traversee
@@ -67,7 +67,7 @@ upper right corner
                 <th class="py-2 px-4">Boat name</th>
                 <th class="py-2 px-4">Type boat</th>
             </tr>
-            <?php foreach ($listTraverseeLiaison as $traversee): ?>
+            <?php foreach ($crossing as $traversee): ?>
 
             <tr class=" py-2 px-4 text-center">
                 <td><?= $traversee['Date_depart'] ?></td>

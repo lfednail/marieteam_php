@@ -28,12 +28,12 @@
 
             <div class="mb-4">
                 <label for="pwd">Password</label>
-                <input type="pass" name="Mot_de_passe" class="w-full px-4 py-2 border border-gray-300 rounded-md" id="pwd">
+                <input type="password" name="Mot_de_passe" class="w-full px-4 py-2 border border-gray-300 rounded-md" id="pwd">
             </div>
 
             <div class="mb-4">
                 <label for="pwdConf">Confirmation password</label>
-                <input type="pass" name="Mot_de_passeConfirmation" class="w-full px-4 py-2 border border-gray-300 rounded-md" id="pwdConf">
+                <input type="password" name="Mot_de_passeConfirmation" class="w-full px-4 py-2 border border-gray-300 rounded-md" id="pwdConf">
             </div>
 
             <button type="submit" class="w-40 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Save Changes</button>

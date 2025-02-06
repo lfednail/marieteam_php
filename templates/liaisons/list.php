@@ -1,8 +1,8 @@
-<?php $listLiaisons = $db->select("select * from liaison");?>
+<?php $liaison = $db->select("select * from liaison");?>
 
 <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded space-y-5 my-10 ">
     <h2 class="text-3xl font-bold text-center mb-6">Liaisons</h2>
-    <?php foreach ($listLiaisons as $liaison):?>
+    <?php foreach ($liaison as $liaison):?>
 
         <div class="bg-white shadow-md rounded-lg overflow-hidden p-4">
 
