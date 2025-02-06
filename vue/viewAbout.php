@@ -1,5 +1,5 @@
 <!-- Main content -->
-    <main class="pt-28 px-6">
+    <main class="pt-28 px-20 py-20">
         <div class="container mx-auto bg-white text-gray-900 p-12 rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl">
             <h1 class="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-400 mb-6">About MarieTeam</h1>
             <p class="text-lg text-gray-800 mb-10">MarieTeam is a visionary company specialised in international travel and transport by fret. We push the limits to offer high quality hyper-personalised services to our clients, be it business trips, tourism or international freight transport.</p>
