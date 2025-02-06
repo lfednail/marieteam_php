@@ -91,13 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
             <!-- Action buttons -->
             <div class="flex flex-col md:flex-row gap-4">
                 <a href="profile/editProfile" class="flex-1 text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-                    ✏️ Edit Profile
+                     Edit Profile
                 </a>
                 <a href="profile/reservation" class="flex-1 text-center bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
-                    📅 My Reservations
+                     My Reservations
                 </a>
                 <a href="logout" class="flex-1 text-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
-                    🚪 Logout
+                    Logout
                 </a>
             </div>
         </div>

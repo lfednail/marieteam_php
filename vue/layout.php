@@ -23,7 +23,7 @@ if(!isset($_SESSION))
             <a href="/marieteam_php/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="/marieteam_php/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
             <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
+            <a href="/marieteam_php/contact" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
             <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
             <?php if(isset($_SESSION['user'])): ?>
@@ -48,7 +48,7 @@ if(!isset($_SESSION))
         <a href="/marieteam_php/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
         <a href="/marieteam_php/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
         <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
-        <a href="#" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
+        <a href="/marieteam_php/contact" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
         <a href="/marieteam_php/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
         <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
         <?php if(isset($_SESSION['user'])): ?>
