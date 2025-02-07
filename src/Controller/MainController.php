@@ -11,7 +11,7 @@ class MainController extends AbstractController {
 
     public function contact() {
 		// Imaginons ici traiter la soumission d'un formulaire de contact et envoyer un mail...
-		$this->redirectToRoute('vue/viewHome', ['state' => 'success']);
+		return $this->renderView('vue/viewContact.php', ['title' => 'Contact']);
 	}
 
     public function liaisons(): string
