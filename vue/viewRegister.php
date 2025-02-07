@@ -1,14 +1,5 @@
-<?php
-if(!empty($errors)){
-    echo '<div class="error" > <p class="error-message" >';
-    foreach ($errors as $error)
-        echo $error . '<br>';
-    echo  '</p></div>';
-}
-?>
-
-<!-- Login Form -->
-<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded my-10">
+<!-- Register form -->
+<div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded mt-12 my-10">
     <h2 class="text-3xl font-bold text-center mb-6">Register</h2>
 
     <form action="register" method="POST">

@@ -1,15 +1,5 @@
 <!-- login.php -->
 
-<!-- if error -->
-<?php
-if(!empty($errors)){
-    echo '<div class="error" > <p class="error-messege" >';
-    foreach ($errors as $error)
-        echo $error;
-    echo  '</p></div>';
-}
-?>
-
 <div class="container mx-auto max-w-lg p-8 bg-white shadow-lg rounded my-10 " >
 	<h2 class="text-3xl font-bold text-center mb-6">Login</h2>
 

@@ -1,12 +1,8 @@
 <?php
 
-
-// Redirect if the user is not logged in
-if (!isset($_SESSION['user'])) {
-    header('Location: /marieteam_php');
-    exit;
-}
-
+/*
+ *
+ * NOt MCV CONFORM FIXE THIS FEDNAIL
 $errors = [];
 
 // Handle avatar upload
@@ -33,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
         }
     }
 }
+*/
 ?>
 
 <!-- Profile card container -->
