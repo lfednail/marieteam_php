@@ -1,5 +1,10 @@
 <?php
 include_once "model/bd.profile.inc.php";
+if (!isset($_SESSION['user'])) {
+    header('Location: /marieteam_php');
+    exit;
+}
+
 if (
     isset($_POST['Nom_utilisateur']) &&
     isset($_POST['Prenom_utilisateur']) &&
@@ -9,6 +14,8 @@ if (
     if (empty($errors)) {
         header('location: /marieteam_php/profile');
         exit;
+    }else{
+        include "vue/viewErrors.php";
     }
 }
 include_once 'vue/viewEditProfile.php';

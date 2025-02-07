@@ -6,6 +6,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     if (empty($errors)) {
         header('location: /marieteam_php/profile');
         exit;
+    }else{
+        include "vue/viewErrors.php";
     }
 }
 
