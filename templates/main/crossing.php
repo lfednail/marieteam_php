@@ -4,7 +4,7 @@ use App\DB\BDD;
 
 $db = new BDD();
 
-$traversee = $db->select('Select * from viewtraversee');
+$traversee = $db->selectAll('Select * from viewtraversee');
 ?>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-10">
   <table class="w-full text-sm text-left rtl:text-right text-gray-500">

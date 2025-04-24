@@ -4,8 +4,8 @@ use App\DB\BDD;
 
 $db = new BDD();
 
-$boatCruse = $db->select("select * from viewvoyageur");
-$boatFret = $db->select("select * from viewfret");
+$boatCruse = $db->selectAll("select * from viewvoyageur");
+$boatFret = $db->selectAll("select * from viewfret");
 
 ?>
 
@@ -15,7 +15,7 @@ $boatFret = $db->select("select * from viewfret");
 
     <?php foreach ($boatCruse as $cruse):?>
         <?php $picture = $db->selectOne("Select * from image where id_Image = {$cruse['id_Image']}") ?>
-        <?php $listEquipement = $db->select("Select * from viewliste_equipement wher id_Bateau = {$cruse['id_Bateau']}") ?>
+        <?php $listEquipement = $db->selectAll("Select * from viewliste_equipement wher id_Bateau = {$cruse['id_Bateau']}") ?>
         <div class="p-5">
             
             <img src="/marieteam_php/assets/<?= $picture['Nom_image'] . "." . $picture['Extension'] ?>" alt="image du bateau">

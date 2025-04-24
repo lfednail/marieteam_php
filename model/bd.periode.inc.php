@@ -7,5 +7,5 @@ $db = new BDD();
 function getPeriode(){
     global $db;
     $query = "SELECT * FROM periode";
-    return $db->select($query);
+    return $db->selectAll($query);
 }

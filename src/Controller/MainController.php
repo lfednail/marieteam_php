@@ -9,8 +9,8 @@ class MainController extends AbstractController {
 		return $this->renderView('vue/viewHome.php', ['title' => 'Home']);
 	}
 
-    public function contact() {
-		// Imaginons ici traiter la soumission d'un formulaire de contact et envoyer un mail...
+    public function contact(): string
+    {
 		return $this->renderView('vue/viewContact.php', ['title' => 'Contact']);
 	}
 
@@ -29,30 +29,35 @@ class MainController extends AbstractController {
         );
     }
 
-    public function liaisonCreate(){
+    public function liaisonCreate(): string
+    {
         return $this->renderView('liaisons/admin/create.php', ['title' => 'Create a liaison']);
     }
 
-    public function liaisonEdit(array $data){
+    public function liaisonEdit(array $data): string
+    {
         return $this->renderView('liaisons/admin/edit.php', [
             'title' => 'Edit a liaison',
             'id' => $data['id'],
         ]);
     }
 
-    public function liaisonTryCreate(){
+    public function liaisonTryCreate(): string
+    {
         return $this->renderView('verification/try_create.php', ['title' => 'Try create a liaison']);
     }
 
-    public function liaisonTryEdit(array $data){
+    public function liaisonTryEdit(array $data): string
+    {
         return $this->renderView('verification/try_edit.php', [
             'title' => 'Try edit a liaison',
             'id' => $data['id']
         ]);
     }
 
-    public function crossing(){
-        return $this->renderView('main/liaisons.php', ['title' => 'Traversee']);
+    public function crossing(): string
+    {
+        return $this->renderView('controllerpage/crossing.php', ['title' => 'Traversee']);
     }
 
     public function login(): string
@@ -65,20 +70,23 @@ class MainController extends AbstractController {
         return $this->renderView('controllerpage/register.php', ['title' => 'Register']);
     }
 
-    public function logout(){
+    public function logout(): string
+    {
         return $this->renderView('controllerpage/logout.php', ['title' => 'Deconnection']);
     }
 
-    public function profile(){
+    public function profile(): string
+    {
         return $this->renderView('controllerpage/profile.php', ['title' => 'Your profile']);
     }
 
-    public function editProfile(){
+    public function editProfile(): string
+    {
         return $this->renderView('controllerpage/editProfile.php', ['title' => 'EditProfil']);
     }
 
-    public function about(){
+    public function about(): string
+    {
         return $this->renderView('vue/viewAbout.php', ['title' => 'About']);
     }
-
 }

@@ -33,5 +33,5 @@ function getLiaisonById($id){
 function getAllLiaison(){
     global $db;
     $query = "SELECT * FROM liaison";
-    return $db->select($query);
+    return $db->selectAll($query);
 }
