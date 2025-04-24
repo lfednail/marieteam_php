@@ -1,4 +1,7 @@
 <!-- Improved Tables -->
+<?php
+print_r($tarif);
+?>
 <div class="p-4 space-y-8">
   <div style="position: sticky; top: 0; background: white; z-index: 10;">
     <label for="Tarif" class="block text-lg font-semibold text-gray-700 mb-2">Tarif</label>

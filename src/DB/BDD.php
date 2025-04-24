@@ -22,8 +22,22 @@ class BDD{
     public function selectParam(string $sql , array $params){
         $stmt = $this->BDD->prepare($sql);
         //boucle liant les parametres a la requette
-        foreach ($params as $key => $value)
-            $stmt->bindParam($key, $value);
+        foreach ($params as $key => $value) {
+            // Dynamically bind the parameter based on its type
+            if (is_int($value)) {
+                // Integer
+                $stmt->bindParam($key, $value, PDO::PARAM_INT);
+            } elseif (is_bool($value)) {
+                // Boolean
+                $stmt->bindParam($key, $value, PDO::PARAM_BOOL);
+            } elseif (is_null($value)) {
+                // NULL
+                $stmt->bindParam($key, $value, PDO::PARAM_NULL);
+            } else {
+                // Default to string (covers strings and other types that can be cast to string)
+                $stmt->bindParam($key, $value, PDO::PARAM_STR);
+            }
+        }
         $stmt->execute();
         return  $stmt->fetch(PDO::FETCH_ASSOC);
     }
