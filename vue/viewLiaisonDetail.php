@@ -1,7 +1,4 @@
 <!-- Improved Tables -->
-<?php
-print_r($tarif);
-?>
 <div class="p-4 space-y-8">
   <div style="position: sticky; top: 0; background: white; z-index: 10;">
     <label for="Tarif" class="block text-lg font-semibold text-gray-700 mb-2">Tarif</label>
@@ -18,13 +15,13 @@ print_r($tarif);
       </thead>
       <tbody class="text-center">
 			<?php foreach($tarif as $t): ?>
-        <tr class="even:bg-gray-100 border-t border-gray-300">
-          <td class="py-3 px-4"> <?= $t['Libelle_categorie_tarif'] ?> </td>
-          <td class="py-3 px-4"> <?= $t['Libelle_typeTarif'] ?> </td>
-					<?php foreach($periodes as $p): ?>
-            <td class="py-3 px-4"> <?= (new DateTime($t['Debut_periode']) == new DateTime($p['Debut_periode'])) ? $t['Tarif'] . '€' : 'N/A' ?> </td>
-					<?php endforeach; ?>
-        </tr>
+                <tr class="even:bg-gray-100 border-t border-gray-300">
+                  <td class="py-3 px-4"> <?= $t['Libelle_categorie_tarif'] ?> </td>
+                  <td class="py-3 px-4"> <?= $t['Libelle_typeTarif'] ?> </td>
+                            <?php foreach($periodes as $p): ?>
+                    <td class="py-3 px-4"> <?= (new DateTime($t['Debut_periode']) == new DateTime($p['Debut_periode'])) ? $t['Tarif'] . '€' : 'N/A' ?> </td>
+                            <?php endforeach; ?>
+                </tr>
 			<?php endforeach; ?>
       </tbody>
     </table>
@@ -50,17 +47,17 @@ print_r($tarif);
         </thead>
         <tbody class="text-center">
 				<?php foreach ($crossingVoyageur as $cv): ?>
-          <tr class="even:bg-gray-100 border-t border-gray-300">
-            <td class="py-3 px-4"> <?= $cv['Date_depart'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Date_arrive'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Lieu_depart'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Lieu_arrivee'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Distance_liaison'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Nom_bateau'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Places_passager'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Places_vehicule_inf_5'] ?> </td>
-            <td class="py-3 px-4"> <?= $cv['Places_vehicule_sup_5'] ?> </td>
-          </tr>
+                  <tr class="even:bg-gray-100 border-t border-gray-300">
+                    <td class="py-3 px-4"> <?= $cv['Date_depart'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Date_arrive'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Lieu_depart'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Lieu_arrivee'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Distance_liaison'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Nom_bateau'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Places_passager'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Places_vehicule_inf_5'] ?> </td>
+                    <td class="py-3 px-4"> <?= $cv['Places_vehicule_sup_5'] ?> </td>
+                  </tr>
 				<?php endforeach; ?>
         </tbody>
       </table>

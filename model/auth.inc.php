@@ -2,6 +2,7 @@
 use App\DB\BDD;
 
 require_once "verification.inc.php";
+include "bd.user.inc.php";
 
 global $db;
 $db = new BDD();
@@ -24,19 +25,19 @@ function login(string $email, string $password): array{
     }
 
     // Check if user exists in the database
-    $users = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '${email}'");
-    if (is_null($users)) {
+    $user = getUserByMail($email);
+    if (empty($user)) {
         $errors[] = "This email address is incorrect.";
     }
 
     // Verify password
-    if (!password_verify($_POST["password"], $users["Mot_de_passe"])) {
+    if (!password_verify($_POST["password"], $user["Mot_de_passe"])) {
         $errors[] = "This password is incorrect.";
     }
 
     // Successful login
     if (empty($errors)) {
-        $_SESSION['user'] = $users;
+        $_SESSION['user'] = $user;
     }
     return $errors;
 }
@@ -70,7 +71,7 @@ function register(string $last_name, string $first_name, string $email, string $
     }
 
 // Check if the email is already used
-    $emailExists = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '$email'");
+    $emailExists = getUserByMail($email);
     if (!empty($emailExists)) {
         $errors[] = "This email address is already used. Try logging in.";
     }
@@ -91,7 +92,7 @@ function register(string $last_name, string $first_name, string $email, string $
         );
 
 // Set user session
-        $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE Mail LIKE '{$email}'");
+        $_SESSION['user'] = getUserByMail();
     }
 
     return $errors;

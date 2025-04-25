@@ -1,0 +1,15 @@
+<?php
+use App\DB\BDD;
+
+require_once 'verification.inc.php';
+global $db;
+$db = new BDD();
+
+function getUserByMail(string $email){
+    global $db;
+    $params = [
+        ':mail' => $email
+    ];
+    $user = $db->selectParam("SELECT * FROM utilisateur WHERE Mail LIKE :mail", $params);
+    return !empty($user) ? $user : [];
+}
