@@ -3,7 +3,7 @@
     <!-- Image de fond floutée -->
     <div class="absolute inset-0">
         <img src="/marieteam_php/assets/image-header.jpg" alt="Paysage maritime"
-             class="w-full h-full object-cover blur-md opacity-60">
+            class="w-full h-full object-cover blur-md opacity-60">
     </div>
 
     <!-- Contenu du header -->
@@ -38,7 +38,7 @@
                         <p class="mt-4 text-gray-600">
                             Try an unforgivable travel experience with our personalised offers and impeccable services
                         </p>
-                        <a href="#voyage" class="mt-6 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-blue-600">
+                        <a href="/marieteam_php/vue/viewLiaisonList.php" class="mt-6 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-blue-600">
                             Know more
                         </a>
                     </div>

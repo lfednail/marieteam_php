@@ -22,7 +22,6 @@ if(!isset($_SESSION))
         <div class="hidden md:flex space-x-8"> <!-- Increased space between links -->
             <a href="/marieteam_php/" class="text-gray-300 text-xl hover:text-white">Home</a> <!-- Increased font size -->
             <a href="/marieteam_php/about" class="text-gray-300 text-xl hover:text-white">About</a> <!-- Increased font size -->
-            <a href="#" class="text-gray-300 text-xl hover:text-white">Services</a> <!-- Increased font size -->
             <a href="/marieteam_php/contact" class="text-gray-300 text-xl hover:text-white">Contact</a> <!-- Increased font size -->
             <a href="/marieteam_php/crossing" class="text-gray-300 text-xl hover:text-white">Crossing</a>
             <a href="/marieteam_php/liaisons" class="text-gray-300 text-xl hover:text-white">Liaisons</a>
@@ -60,9 +59,11 @@ if(!isset($_SESSION))
         <?php endif; ?>
     </div>
 </nav>
+
     <div style="min-height: 81.8vh;">
         <?php require $template; ?>
     </div>
+
 <footer class="bg-blue-950 p-6">
     <div class="container mx-auto text-center text-white">
         <p class="text-lg">© 2024 MarieTeam. All rights reserved.</p>
