@@ -16,6 +16,7 @@ if(!isset($_SESSION))
 <nav class="bg-blue-700 p-3 sticky top-0 z-50"> <!-- Increased padding here -->
     <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
+        <img src="/marieteam_php/assets/">
         <a href="/marieteam_php/public" class="text-white text-2xl font-bold">MarieTeam</a> <!-- Increased font size -->
 
         <!-- Links (hidden on mobile) -->
@@ -68,9 +69,9 @@ if(!isset($_SESSION))
     <div class="container mx-auto text-center text-white">
         <p class="text-lg">© 2024 MarieTeam. All rights reserved.</p>
         <div class="mt-4">
-            <a href="#" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
-            <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
-            <a href="#" class="text-gray-300 hover:text-white mx-2">Contact</a>
+            <a href="/marieteam_php/vue/viewPrivacyPolicy.php" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
+            <a href="/marieteam_php/vue/viewTermsOfService.php" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
+            <a href="/marieteam_php/vue/viewContact.php" class="text-gray-300 hover:text-white mx-2">Contact</a>
         </div>
     </div>
 </footer>

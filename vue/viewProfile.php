@@ -32,70 +32,122 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
 */
 ?>
 
-<!-- Profile card container -->
-<div class="max-w-6xl mx-auto mt-10 p-4">
-    <div class="bg-white shadow-xl rounded-lg overflow-hidden flex flex-col md:flex-row">
-        <!-- Sidebar -->
-        <div class="bg-gradient-to-b from-blue-600 to-purple-600 p-6 flex flex-col items-center md:w-1/3">
-            <!-- Avatar upload form -->
-            <form action="" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
-                <label for="avatarInput" class="cursor-pointer avatar-container relative inline-block">
-                    <img class="w-32 h-32 rounded-full border-4 border-white shadow-md transition hover:opacity-90"
-                         src="<?= isset($_SESSION['user']['avatar']) ? $_SESSION['user']['avatar'] : 'https://via.placeholder.com/150' ?>"
-                         alt="Avatar">
-                    <!-- Overlay with pencil icon -->
-                    <div class="avatar-overlay absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 rounded-full flex items-center justify-center opacity-0 transition duration-300 ease-in-out hover:opacity-100">
-                        <i class="fa-solid fa-pencil text-white text-2xl"></i>
+<!-- Profile Page -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Profile Header -->
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <!-- Cover Image -->
+                <div class="h-48 bg-gradient-to-r from-blue-600 to-indigo-600 relative">
+                    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+                </div>
+
+                <!-- Profile Info -->
+                <div class="px-8 pb-8 -mt-16 relative">
+                    <!-- Avatar -->
+                    <div class="flex justify-center">
+                        <div class="relative">
+                            <img class="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+                                 src="<?= isset($_SESSION['user']['avatar']) ? $_SESSION['user']['avatar'] : 'https://via.placeholder.com/150' ?>"
+                                 alt="Profile picture">
+                            <form action="" method="POST" enctype="multipart/form-data" class="absolute bottom-0 right-0">
+                                <label for="avatarInput" class="cursor-pointer">
+                                    <div class="bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <input type="file" id="avatarInput" name="avatar" class="hidden" accept="image/*" onchange="this.form.submit()">
+                            </form>
+                        </div>
                     </div>
-                </label>
-                <input type="file" id="avatarInput" name="avatar" class="hidden" accept="image/*" onchange="this.form.submit()">
-            </form>
-            <!-- Basic user info -->
-            <div class="mt-4 text-center">
-                <h2 class="text-xl font-bold text-white">
-                    <?= $_SESSION['user']['Nom_utilisateur'] . ' ' . $_SESSION['user']['Prenom_utilisateur'] ?>
-                </h2>
-                <p class="text-white text-sm"><?= $_SESSION['user']['Mail'] ?></p>
+
+                    <!-- User Info -->
+                    <div class="text-center mt-4">
+                        <h1 class="text-3xl font-bold text-gray-800">
+                            <?= $_SESSION['user']['Nom_utilisateur'] . ' ' . $_SESSION['user']['Prenom_utilisateur'] ?>
+                        </h1>
+                        <p class="text-gray-600 mt-1"><?= $_SESSION['user']['Mail'] ?></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- Main section -->
-        <div class="p-6 md:w-2/3">
-            <!-- Error messages -->
-            <?php if (!empty($errors)): ?>
-                <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded" role="alert">
-                    <?php foreach ($errors as $error): ?>
-                        <p><?= $error; ?></p>
-                    <?php endforeach; ?>
+
+            <!-- Profile Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Account Information -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Account Information</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="font-medium text-gray-800"><?= $_SESSION['user']['Mail'] ?></p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="text-sm text-gray-500">Registration Date</p>
+                                <p class="font-medium text-gray-800"><?= $_SESSION['user']['date_inscription'] ?? 'N/A' ?></p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="text-sm text-gray-500">Role</p>
+                                <p class="font-medium text-gray-800"><?= $_SESSION['user']['role'] ?? 'User' ?></p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-            <?php endif; ?>
-            <!-- Profile details -->
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Profile Details</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="p-4 border rounded-lg">
-                    <h4 class="font-bold text-gray-600">Email</h4>
-                    <p class="text-gray-800"><?= $_SESSION['user']['Mail'] ?></p>
+
+                <!-- Account Actions -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Account Actions</h2>
+                    <div class="space-y-4">
+                        <a href="/marieteam_php/profile/editProfile" 
+                           class="flex items-center justify-between p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition duration-300">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-blue-100 p-2 rounded-full">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-gray-800">Edit Profile</span>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+
+                        <a href="/marieteam_php/logout" 
+                           class="flex items-center justify-between p-4 bg-red-50 rounded-lg hover:bg-red-100 transition duration-300">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-red-100 p-2 rounded-full">
+                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                                    </svg>
+                                </div>
+                                <span class="font-medium text-gray-800">Logout</span>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="p-4 border rounded-lg">
-                    <h4 class="font-bold text-gray-600">Registration Date</h4>
-                    <p class="text-gray-800"><?= $_SESSION['user']['date_inscription'] ?? 'N/A' ?></p>
-                </div>
-                <div class="p-4 border rounded-lg">
-                    <h4 class="font-bold text-gray-600">Role</h4>
-                    <p class="text-gray-800"><?= $_SESSION['user']['role'] ?? 'User' ?></p>
-                </div>
-                <!-- Additional information can be added here -->
-            </div>
-            <!-- Action buttons -->
-            <div class="flex flex-col md:flex-row gap-4">
-                <a href="profile/editProfile" class="flex-1 text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-                     Edit Profile
-                </a>
-                <a href="profile/reservation" class="flex-1 text-center bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
-                     My Reservations
-                </a>
-                <a href="logout" class="flex-1 text-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
-                    Logout
-                </a>
             </div>
         </div>
     </div>

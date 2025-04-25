@@ -1,76 +1,72 @@
-
-<!-- vertion traduite -->
-
-
-<div class="max-w-7xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-center text-blue-800 mb-8">Search for a crossing</h1>
-
-    <!-- Search form -->
-    <form action="/marieteam_php/crossing/search" method="POST" class="bg-white p-6 rounded-lg shadow-md mb-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Departure location -->
-            <div>
-                <label for="lieu_depart" class="block text-sm font-medium text-gray-700 mb-1">Departure location</label>
-                <input type="text" id="lieu_depart" name="lieu_depart" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <!-- Arrival location -->
-            <div>
-                <label for="lieu_arrivee" class="block text-sm font-medium text-gray-700 mb-1">Arrival location</label>
-                <input type="text" id="lieu_arrivee" name="lieu_arrivee" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <!-- Departure date -->
-            <div>
-                <label for="date_depart" class="block text-sm font-medium text-gray-700 mb-1">Departure date</label>
-                <input type="date" id="date_depart" name="date_depart" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+<!-- Crossing Page Modern Design -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Hero Section -->
+        <div class="mb-10">
+            <div class="h-56 md:h-72 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="relative z-10 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Look for a crossing</h1>
+                    <p class="text-lg md:text-xl text-blue-100">Find the ideal crossing for your needs</p>
+                </div>
             </div>
         </div>
-            <!-- Button de recherche -->
-        <div class="mt-6 text-center">
-            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-                Search
-            </button>
-        </div>
-    </form>
 
-    <!-- Results table -->
-    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-blue-700 text-white">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Departure date</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Arrival date</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Departure location</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Arrival location</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Boat</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Available seats</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-                <?php if (isset($crossings) && !empty($crossings)): ?>
-                    <?php foreach ($crossings as $crossing): ?>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Date_depart']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Date_arrive']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Lieu_depart']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Lieu_arrivee']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Nom_bateau']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= overspecialises($crossing['Nombre_place']) ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <a href="/marieteam_php/crossing/<?= $crossing['id_Traversee'] ?>" class="text-blue-600 hover:text-blue-900">View details</a>
-                            </td>
-                        </tr>
+        <!-- Search Form -->
+        <div class="max-w-3xl mx-auto mb-12">
+            <form action="/marieteam_php/crossing/search" method="POST" class="bg-white rounded-2xl shadow-md p-8 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                <div>
+                    <label for="lieu_depart" class="block text-gray-700 font-medium mb-1">Departure</label>
+                    <input type="text" id="lieu_depart" name="lieu_depart" placeholder="Departure city" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="lieu_arrivee" class="block text-gray-700 font-medium mb-1">Arrival</label>
+                    <input type="text" id="lieu_arrivee" name="lieu_arrivee" placeholder="Arrival city" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="date_depart" class="block text-gray-700 font-medium mb-1">Date</label>
+                    <input type="date" id="date_depart" name="date_depart" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="mt-8">
+            <?php if (!empty($crossings)) : ?>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <?php foreach ($crossings as $crossing) : ?>
+                        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-xl transition duration-300">
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-700 mb-2">
+                                    <?= htmlspecialchars($crossing['lieu_depart']) ?> → <?= htmlspecialchars($crossing['lieu_arrivee']) ?>
+                                </h2>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Date :</span> <?= htmlspecialchars($crossing['date_depart']) ?>
+                                </p>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">hour :</span> <?= htmlspecialchars($crossing['heure_depart']) ?>
+                                </p>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Boat :</span> <?= htmlspecialchars($crossing['nom_bateau'] ?? 'N/A') ?>
+                                </p>
+                                <p class="text-gray-600 mb-2">
+                                    <span class="font-medium">Time :</span> <?= htmlspecialchars($crossing['duree'] ?? 'N/A') ?>
+                                </p>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <a href="/marieteam_php/crossing/detail?id=<?= urlencode($crossing['id_traversee']) ?>" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Details</a>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="7" class="px-6 py-4 text-center text-gray-500">
-                            No crossings found
-                        </td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                </div>
+            <?php else : ?>
+                <div class="text-center text-gray-500 text-lg mt-12">
+                    No crossing found for your criteria.
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
