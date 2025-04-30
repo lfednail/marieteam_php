@@ -13,6 +13,10 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisons'
     ],
+    'liaisons/create'  => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'liaisonsCreate'
+    ],
     'liaisons/edit/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonEdit'

@@ -31,12 +31,12 @@ class MainController extends AbstractController {
 
     public function liaisonCreate(): string
     {
-        return $this->renderView('liaisons/admin/create.php', ['title' => 'Create a liaison']);
+        return $this->renderView('admin/liaisonCreate.php', ['title' => 'Create a liaison']);
     }
 
     public function liaisonEdit(array $data): string
     {
-        return $this->renderView('liaisons/admin/edit.php', [
+        return $this->renderView('admin/liaisonEdit.php', [
             'title' => 'Edit a liaison',
             'id' => $data['id'],
         ]);
