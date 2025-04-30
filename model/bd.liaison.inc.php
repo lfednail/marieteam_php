@@ -26,8 +26,11 @@ function deleteLiaison(){}
 
 function getLiaisonById($id){
     global $db;
-    $query = "SELECT * FROM liaison WHERE id_liaison = {$id}";
-    return $db->selectOne($query);
+    $params = [
+        ':id' => $id
+    ];
+    $query = "SELECT * FROM liaison WHERE id_liaison = :id";
+    return $db->selectOneParam($query, $params);
 }
 
 function getAllLiaison(){
