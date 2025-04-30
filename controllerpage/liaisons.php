@@ -20,9 +20,4 @@ use App\DB\BDD;
         }
         $liaisons = getAllLiaison();
         include "vue/viewLiaisonList.php";
-        if(isset($_SESSION['user'])){
-            if($_SESSION['user']['Role'] == "admin" ||$_SESSION['user']['Role'] == "Admin"){
-                include "vue/viewLiaisonAdd.php";
-            }
-        }
     }

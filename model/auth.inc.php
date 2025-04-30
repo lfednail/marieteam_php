@@ -83,7 +83,7 @@ function register(string $last_name, string $first_name, string $email, string $
 // Insert new user into the database
 
         $db->insert("INSERT INTO utilisateur (`Nom_utilisateur`, `Prenom_utilisateur`, `Mail`, `Mot_de_passe`) 
-             VALUES (
+            VALUES (
                 '${last_name}',
                 '${first_name}',
                 '${email}',

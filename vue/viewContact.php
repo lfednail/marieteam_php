@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-800">Call Us</h3>
-                                    <a href="tel:+33123456789" class="text-blue-600 hover:text-blue-800">+33 1 23 45 67 89</a>
+                                    <a href="tel:+33123456789" class="text-blue-600 hover:text-blue-800">+33 X XX XX XX XX</a>
                                 </div>
                             </div>
                         </div>

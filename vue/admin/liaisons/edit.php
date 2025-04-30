@@ -4,7 +4,7 @@
         <img src="/marieteam_php/assets/ferry-edit.jpg" alt="Ferry en mer" class="w-full h-full object-cover opacity-30">
     </div>
     <div class="relative z-10 container mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-4">Edit Route</h1>
+        <h1 class="text-5xl font-bold mb-4">Edit Liaisons</h1>
         <p class="text-xl">Modify the details of this maritime connection</p>
     </div>
 </div>

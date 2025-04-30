@@ -16,7 +16,6 @@ if(!isset($_SESSION))
 <nav class="bg-blue-700 p-3 sticky top-0 z-50"> <!-- Increased padding here -->
     <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
-        <img src="/marieteam_php/assets/">
         <a href="/marieteam_php/public" class="text-white text-2xl font-bold">MarieTeam</a> <!-- Increased font size -->
 
         <!-- Links (hidden on mobile) -->
