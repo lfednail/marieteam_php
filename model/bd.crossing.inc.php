@@ -4,8 +4,8 @@ use App\DB\BDD;
 
 $db = new BDD(); //création de la connexion à la base de données
 
-$baseQueryCrossing = ;
-$baseQueryFret = ;
+$baseQueryCrossing = "";
+$baseQueryFret = "";
 
 function getAllFretCrossing()
 {
