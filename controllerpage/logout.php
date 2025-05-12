@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . "/../model/auth.inc.php";
+include_once  "/../model/auth.inc.php";
 
 logout();
 
