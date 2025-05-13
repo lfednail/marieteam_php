@@ -44,7 +44,7 @@ function login(string $email, string $password): array{
 
 function logout(){
     unset($_SESSION['user']);
-    header('Location: /');
+    header('Location: /marieteam_php');
     exit;
 }
 
