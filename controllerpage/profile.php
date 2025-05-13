@@ -2,7 +2,7 @@
 
 // Redirect if the user is not logged in
 if (!isset($_SESSION['user'])) {
-    header('Location: /marieteam_php');
+    header('Location: /');
     exit;
 }
 

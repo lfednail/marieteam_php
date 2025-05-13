@@ -1,5 +1,5 @@
 <?php
-include_once  "/../model/auth.inc.php";
+include_once  "model/auth.inc.php";
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $errors = login($_POST['email'], $_POST['password']);

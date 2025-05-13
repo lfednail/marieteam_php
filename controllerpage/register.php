@@ -1,5 +1,5 @@
 <?php
-include_once  "/../model/auth.inc.php";
+include_once  "model/auth.inc.php";
 $errors = [];
 
 if (

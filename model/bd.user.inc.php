@@ -11,6 +11,5 @@ function getUserByMail(string $email){
         ':mail' => $email
     ];
     $user = $db->selectOneParam("SELECT * FROM utilisateur WHERE Mail LIKE :mail", $params);
-    print_r($user);
     return !empty($user) ? $user : [];
 }

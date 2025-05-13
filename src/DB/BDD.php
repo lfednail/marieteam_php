@@ -29,6 +29,7 @@ class BDD{
     public function selectOneParam(string $sql , array $params){
         $stmt = $this->BDD->prepare($sql);
         $this->bindParam($stmt, $params);
+        $stmt->execute();
         return  $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
