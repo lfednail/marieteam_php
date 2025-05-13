@@ -9,8 +9,9 @@ use App\DB\BDD;
     if (isset($data['id'])) {
         $periodes = getPeriode();
         $tarif = getTarifLiaison($data['id']);
-        $crossingVoyageur = getAllVoyageurCrossingByLiaisonId($data['id']);
+        $crossingVoyageur = getAllCruiseCrossingByLiaisonId($data['id']);
         $crossingFret = getAllFretCrossingByLiaisonId($data['id']);
+        //print_r($crossingVoyageur);
         include "vue/viewLiaisonDetail.php";
     } else {
         if(isset($_POST['Lieu_depart']) && isset($_POST['Lieu_arrivee']) && isset($_POST['Distance_liaison'])){

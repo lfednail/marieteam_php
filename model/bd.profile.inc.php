@@ -50,7 +50,6 @@ function editProfile(int $id_Utilisateur, string $last_name, string $first_name,
                             "Mail = '{$email}', " .
                             "Mot_de_passe = '{$cryptPassword}'" .
                         "WHERE id_Utilisateur = {$id_Utilisateur}";
-        print_r($updateQuery);
         $db->update($updateQuery);
 
         $_SESSION['user'] = $db->selectOne("SELECT * FROM utilisateur WHERE id_Utilisateur = {$id_Utilisateur}");
