@@ -14,18 +14,35 @@
 
         <!-- Search Form -->
         <div class="max-w-3xl mx-auto mb-12">
-            <form action="/marieteam_php/crossing/search" method="POST" class="bg-white rounded-2xl shadow-md p-8 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <form action="/marieteam_php/crossing" method="GET" class="bg-white rounded-2xl shadow-md p-8 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                 <div>
                     <label for="lieu_depart" class="block text-gray-700 font-medium mb-1">Departure</label>
-                    <input type="text" id="lieu_depart" name="lieu_depart" placeholder="Departure city" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input
+                            type="text"
+                            id="lieu_depart"
+                            name="lieu_depart"
+                            placeholder="Departure city"
+                            value="<?= $_GET['lieu_depart'] ?? "" ?>"
+                            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
                     <label for="lieu_arrivee" class="block text-gray-700 font-medium mb-1">Arrival</label>
-                    <input type="text" id="lieu_arrivee" name="lieu_arrivee" placeholder="Arrival city" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input
+                            type="text"
+                            id="lieu_arrivee"
+                            name="lieu_arrivee"
+                            placeholder="Arrival city"
+                            value="<?= $_GET['lieu_arrivee'] ?? "" ?>"
+                            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
                     <label for="date_depart" class="block text-gray-700 font-medium mb-1">Date</label>
-                    <input type="date" id="date_depart" name="date_depart" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input
+                            type="date"
+                            id="date_depart"
+                            name="date_depart"
+                            value="<?= $_GET['date_depart'] ?? "" ?>"
+                            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow">Search</button>
@@ -38,26 +55,47 @@
             <?php if (!empty($crossings)) : ?>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <?php foreach ($crossings as $crossing) : ?>
+                    <?php
+                        $datetimeStart = new DateTime($crossing['Date_depart']);
+                        /*
+                         * l day of week
+                         * j day of months without leading zero
+                         * s english suffix day of month
+                         * F month by name
+                         * Y year
+                         * */
+                        $dateStart = $datetimeStart->format('l jS \\of F Y');
+                        /*
+                         * h hour
+                         * i minute
+                         * A time period of day
+                         * */
+                        $hourStart = $datetimeStart->format('h:i A');
+                        ?>
                         <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between hover:shadow-xl transition duration-300">
                             <div>
                                 <h2 class="text-2xl font-bold text-blue-700 mb-2">
-                                    <?= htmlspecialchars($crossing['lieu_depart']) ?> → <?= htmlspecialchars($crossing['lieu_arrivee']) ?>
+                                    <?= htmlspecialchars($crossing['Lieu_depart']) ?> → <?= htmlspecialchars($crossing['Lieu_arrivee']) ?>
                                 </h2>
                                 <p class="text-gray-600 mb-2">
-                                    <span class="font-medium">Date :</span> <?= htmlspecialchars($crossing['date_depart']) ?>
+                                    <span class="font-medium">Date :</span> <?= $dateStart ?>
                                 </p>
                                 <p class="text-gray-600 mb-2">
-                                    <span class="font-medium">hour :</span> <?= htmlspecialchars($crossing['heure_depart']) ?>
+                                    <span class="font-medium">hour :</span> <?= $hourStart ?>
                                 </p>
                                 <p class="text-gray-600 mb-2">
-                                    <span class="font-medium">Boat :</span> <?= htmlspecialchars($crossing['nom_bateau'] ?? 'N/A') ?>
+                                    <span class="font-medium">Boat :</span> <?= htmlspecialchars($crossing['Nom_bateau']) ?? 'N/A' ?>
                                 </p>
                                 <p class="text-gray-600 mb-2">
-                                    <span class="font-medium">Time :</span> <?= htmlspecialchars($crossing['duree'] ?? 'N/A') ?>
+                                    <span class="font-medium">Distance :</span> <?= htmlspecialchars($crossing['Distance_liaison']) ?? 'N/A' ?> Km
                                 </p>
                             </div>
                             <div class="mt-4 flex justify-end">
-                                <a href="/marieteam_php/crossing/detail?id=<?= urlencode($crossing['id_traversee']) ?>" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Details</a>
+                                <a
+                                    href="/marieteam_php/crossing/<?= urlencode($crossing['id_Traversee']) ?>"
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">
+                                        Details
+                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>

@@ -2,9 +2,6 @@
 
 use App\DB\BDD;
 
-include_once "model/bd.boat_cruise.inc.php";
-include_once "model/bd.boat_fret.inc.php";
-
 global $db;
 $db = new BDD(); //création de la connexion à la base de données
 
@@ -51,7 +48,7 @@ function getAllCruiseCrossing()
     return $db->selectAll($query);
 }
 
-function getAllFretCrossingByLiaisonId($id)
+function getAllFretCrossingByLiaisonId($id): array
 {
     global $db, $fretquery;
     $crossings = getAllCrossingByID($id);
@@ -100,9 +97,77 @@ function getAllCrossingByID($id): array
     return $db->selectParam($query, $params);
 }
 
-function getAllCrossingByDate($date)
+function getAllCrossingByDate($date): array
 {
     global $db, $baseQueryCruisse;
-    $query = $baseQueryCruisse . "Date_depart = '{$date}'";
-    return $db->selectAll($query);
+    $query = $baseQueryCruisse . "WHERE Date_depart > :date";
+    $params = [
+        ':date' => $date
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByStart($start): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Lieu_depart LIKE CONCAT('%', :depart, '%')";
+    $params = [
+        ':depart' => $start
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByEnd($end): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Lieu_arrivee LIKE CONCAT('%', :arrivee, '%')";
+    $params = [
+        ':arrivee' => $end
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByPorts($start, $end): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Lieu_depart LIKE CONCAT('%', :depart, '%') AND Lieu_arrivee LIKE CONCAT('%', :arrivee, '%')";
+    $params = [
+        ':depart' => $start,
+        ':arrivee' => $end
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByDateNStart($date, $start): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Date_depart > :date AND Lieu_depart LIKE CONCAT('%', :depart, '%')";
+    $params = [
+        ':date' => $date,
+        ':depart' => $start
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByDateNEnd($date, $end): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Date_depart > :date AND Lieu_arrivee LIKE CONCAT('%', :arrivee, '%')";
+    $params = [
+        ':date' => $date,
+        ':arrivee' => $end
+    ];
+    return $db->selectParam($query, $params);
+}
+
+function getCrossingByDateNPorts($date, $start, $end): array
+{
+    global $db, $baseQueryCruisse;
+    $query = $baseQueryCruisse . "WHERE Date_depart > :date AND Lieu_depart LIKE CONCAT('%', :depart, '%') AND Lieu_arrivee LIKE CONCAT('%', :arrivee, '%')";
+    $params = [
+        ':date' => $date,
+        ':depart' => $start,
+        ':arrivee' => $end
+    ];
+    return $db->selectParam($query, $params);
 }

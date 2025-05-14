@@ -2,6 +2,8 @@
 
 namespace App\DB;
 use PDO;
+use PDOStatement;
+
 class BDD{
     private $BDD;
     public function __construct(){
@@ -43,22 +45,23 @@ class BDD{
         return $this->BDD->query($sql)->execute();
     }
 
-    private function bindParam(\PDOStatement $stmt, array $params){
+    private function bindParam(PDOStatement $stmt, array $params){
         //boucle liant les parametres a la requette
         foreach ($params as $key => $value) {
             // Dynamically bind the parameter based on its type
-            if (is_int($value)) {
-                // Integer
-                $stmt->bindParam($key, $value, PDO::PARAM_INT);
-            } elseif (is_bool($value)) {
-                // Boolean
-                $stmt->bindParam($key, $value, PDO::PARAM_BOOL);
-            } elseif (is_null($value)) {
-                // NULL
-                $stmt->bindParam($key, $value, PDO::PARAM_NULL);
-            } else {
-                // Default to string (covers strings and other types that can be cast to string)
-                $stmt->bindParam($key, $value);
+            switch ($value){
+                //integer
+                case is_int($value): $stmt->bindParam($key, $value, PDO::PARAM_INT);
+                break;
+                //boolean
+                case is_bool($value): $stmt->bindParam($key, $value, PDO::PARAM_BOOL);
+                break;
+                //null
+                case is_null($value): $stmt->bindParam($key, $value, PDO::PARAM_NULL);
+                break;
+                //default
+                default: $stmt->bindParam($key, $value);
+                break;
             }
         }
     }
