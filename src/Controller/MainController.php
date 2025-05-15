@@ -89,4 +89,12 @@ class MainController extends AbstractController {
     {
         return $this->renderView('vue/viewAbout.php', ['title' => 'About']);
     }
+
+    public function apiGetBoat(){
+        return $this->api('boat', 'GET');
+    }
+
+    public function apiGetBoatWithData(array $data){
+        return $this->api('boat', 'GET', $data);
+    }
 }

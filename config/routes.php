@@ -21,10 +21,6 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonEdit'
     ],
-    'liaisons/try_edit/{id}' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'liaisonTryEdit'
-    ],
     'liaisons/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'liaisonById'
@@ -32,10 +28,6 @@ const ROUTES = [
     'crossing' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'crossing'
-    ],
-    'crossing/search' => [
-        'controller' => App\Controller\MainController::class,
-        'method' => 'searchCrossing'
     ],
 	'login' => [
 		'controller' => App\Controller\MainController::class,
@@ -61,5 +53,12 @@ const ROUTES = [
         'controller' => App\Controller\MainController::class,
         'method' => 'about'
     ],
-
+    '/api/boat/GET' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'apiGetBoat'
+    ],
+    '/api/boat/GET/{id}' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'apiGetBoatWithData'
+    ]
 ];

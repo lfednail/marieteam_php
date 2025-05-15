@@ -30,5 +30,5 @@ function getBoatCruiseByID(int $id)
         ':id' => $id
     ];
     $query = $queryBase . 'id_Bateau=:id';
-    return $db->selectParam($query, $params);
+    return $db->selectOneParam($query, $params);
 }

@@ -24,4 +24,8 @@ abstract class AbstractController {
 		die;
 	}
 
+    public function api(string $model, string $method, array $data = []){
+        return require_once 'api/api.' . $model . '.php';
+    }
+
 }

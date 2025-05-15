@@ -28,5 +28,5 @@ function getBoatFretByID(int $id): array
         ':id' => $id
     ];
     $query = $queryBase . 'id_Bateau=:id';
-    return $db->selectParam($query, $params);
+    return $db->selectOneParam($query, $params);
 }
