@@ -1,7 +1,7 @@
 <!-- Hero Section -->
 <div class="relative bg-blue-700 text-white py-20">
     <div class="absolute inset-0">
-        <img src="/marieteam_php/assets/ferry-edit.jpg" alt="Ferry en mer" class="w-full h-full object-cover opacity-30">
+        <img src="/marieteam_php/assets/image-header.jpg" alt="Ferry en mer" class="w-full h-full object-cover opacity-30">
     </div>
     <div class="relative z-10 container mx-auto text-center">
         <h1 class="text-5xl font-bold mb-4">Edit Liaisons</h1>
@@ -35,37 +35,6 @@
                 <input type="number" id="distance" name="distance" 
                     value="<?= htmlspecialchars($liaison['Distance_liaison']) ?>" 
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-            </div>
-
-            <!-- Ports -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Departure Port -->
-                <div>
-                    <label for="port_depart" class="block text-sm font-medium text-gray-700">Departure Port</label>
-                    <select id="port_depart" name="port_depart" 
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                        <?php foreach ($ports as $port): ?>
-                            <option value="<?= $port['id_Port'] ?>" 
-                                    <?= $port['id_Port'] == $liaison['id_Port_depart'] ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($port['Nom_port']) ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <!-- Arrival Port -->
-                <div>
-                    <label for="port_arrivee" class="block text-sm font-medium text-gray-700">Arrival Port</label>
-                    <select id="port_arrivee" name="port_arrivee" 
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                        <?php foreach ($ports as $port): ?>
-                            <option value="<?= $port['id_Port'] ?>" 
-                                    <?= $port['id_Port'] == $liaison['id_Port_arrivee'] ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($port['Nom_port']) ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
             </div>
 
             <!-- Submit Buttons -->

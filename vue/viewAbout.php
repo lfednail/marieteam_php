@@ -77,7 +77,7 @@
 
                 <!-- Team Member 2 -->
                 <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <img src="assets/team/engineer.jpg" alt="Engineer" class="w-full h-48 object-cover">
+                    <img src="assets/team/engineer.jpeg" alt="Engineer" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold text-gray-800">Marie Dubois</h3>
                         <p class="text-gray-600">Chief Engineer</p>
@@ -88,14 +88,14 @@
                 <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
                     <img src="assets/team/steward.jpg" alt="Steward" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800">Pierre Martin</h3>
-                        <p class="text-gray-600">Hospitality Manager</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Steward Staff</h3>
+                        <p class="text-gray-600">Hospitality Staff</p>
                     </div>
                 </div>
 
                 <!-- Team Member 4 -->
                 <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <img src="assets/team/navigator.jpg" alt="Navigator" class="w-full h-48 object-cover">
+                    <img src="assets/team/navigator.jpeg" alt="Navigator" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold text-gray-800">Sophie Laurent</h3>
                         <p class="text-gray-600">Navigation Officer</p>

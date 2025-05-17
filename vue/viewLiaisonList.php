@@ -13,7 +13,7 @@
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <!-- Image -->
                 <div class="relative h-48">
-                    <img src="/marieteam_php/assets/<?= strtolower(str_replace(' ', '-', $l['Lieu_arrivee'])) ?>.jpg" 
+                    <img src="/marieteam_php/assets/img_destination/<?= strtolower(str_replace(' ', '-', $l['Lieu_arrivee'])) ?>.jpg" 
                         alt="<?= $l['Lieu_arrivee'] ?>" 
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
