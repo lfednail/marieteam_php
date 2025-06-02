@@ -1,7 +1,7 @@
 <?php
 
 use App\DB\BDD;
-
+global $db, $queryBase;
 $db = new BDD(); //création de la connexion à la base de données
 
 $queryBase = 'SELECT ' .

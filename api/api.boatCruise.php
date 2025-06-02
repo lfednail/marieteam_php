@@ -1,5 +1,6 @@
 <?php
-include_once 'model/bd.boat.inc.php';
+
+include_once 'model/bd.boat_cruise.inc.php';
 
 // Définir les en-têtes de réponse HTTP
 header("Content-Type: application/json");
@@ -97,9 +98,9 @@ switch ($method) {
     case 'GET':
 
         if ($id) {
-            sendResponse(200, getBoatByID($id));
+            sendResponse(200, getBoatCruiseByID($id));
         } else {
-            sendResponse(200, getAllBoat());
+            sendResponse(200, getAllBoatCruise());
         }
         break;
     case 'POST':
@@ -131,5 +132,3 @@ switch ($method) {
         */
         break;
 }
-
-

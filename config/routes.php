@@ -60,5 +60,13 @@ const ROUTES = [
     '/api/boat/GET/{id}' => [
         'controller' => App\Controller\MainController::class,
         'method' => 'apiGetBoatWithData'
+    ],
+    '/api/boatCruise/GET' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'apiGetBoatCruise'
+    ],
+    '/api/boatCruise/GET/{id}' => [
+        'controller' => App\Controller\MainController::class,
+        'method' => 'apiGetBoatCruiseWithData'
     ]
 ];

@@ -97,4 +97,12 @@ class MainController extends AbstractController {
     public function apiGetBoatWithData(array $data){
         return $this->api('boat', 'GET', $data);
     }
+
+    public function apiGetBoatCruise(){
+        return $this->api('boatCruise', 'GET');
+    }
+
+    public function apiGetBoatCruiseWithData(array $data){
+        return $this->api('boatCruise', 'GET', $data);
+    }
 }
