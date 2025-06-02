@@ -15,7 +15,7 @@ function createLiaison($started, $ended, $distance){
         return $error;
     }else{
         $db->insert("INSERT INTO liaison (Lieu_depart, Lieu_arrivee, Distance_liaison) 
-                     VALUES ('{$started}', '{$ended}', '{$distance}')");
+                    VALUES ('{$started}', '{$ended}', '{$distance}')");
     }
     return $error;
 }
